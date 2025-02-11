@@ -1,0 +1,17 @@
+{
+    "HomePage": {
+        "title": "Hello World!"
+    },
+    "Faq": {
+        "title": "About Us"
+    },
+    "Rsvp": {
+        "title": "Contact Us"
+    },
+    "Navbar": {
+        "title": "Navbar en francais"
+    },
+    "Footer": {
+        "title": "Language"
+    }
+}
