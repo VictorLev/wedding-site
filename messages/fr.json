@@ -1,6 +1,6 @@
 {
     "HomePage": {
-        "title": "Hello World!"
+        "home": "Hello World!"
     },
     "Faq": {
         "title": "About Us"
@@ -9,7 +9,14 @@
         "title": "Contact Us"
     },
     "Navbar": {
-        "title": "Navbar en francais"
+        "Home": "Acceuil",
+        "Place": "Lieu",
+        "Ceremony": "Cérémonie",
+        "Reception": "Réception",
+        "Accommodations": "Hébergement",
+        "Gifts": "Cadeaux",
+        "Faq": "Faq",
+        "Rsvp": "RSVP"
     },
     "Footer": {
         "title": "Language"
