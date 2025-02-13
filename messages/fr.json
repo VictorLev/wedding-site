@@ -1,6 +1,9 @@
 {
     "HomePage": {
-        "home": "Hello World!"
+        "title": "Marie-Lie & Victor",
+        "subtitle": "venez célébrer notre mariage",
+        "date": "Le 25 septembre 2026",
+        "Place": "Lieu"
     },
     "Faq": {
         "title": "About Us"

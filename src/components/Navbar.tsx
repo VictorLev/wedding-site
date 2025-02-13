@@ -28,12 +28,18 @@ const Navbar: FC<NavbarProps> = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const navItems = ['Home', 'Place', 'Ceremony', 'Reception', 'Accommodations', 'Gifts'];
-
+  const navItems = [
+    { name: 'Home', href: '#home' },
+    { name: 'Place', href: '#place' },
+    { name: 'Ceremony', href: '#ceremony' },
+    { name: 'Reception', href: '#reception' },
+    { name: 'Accommodations', href: '#accommodations' },
+    { name: 'Gifts', href: '#gifts' },
+  ];
   return (
-    <div className={`sticky top-0 mx-auto p-1 bg-darkBlue transition-opacity duration-[1500ms] ${ isVisible ? 'opacity-100' : 'opacity-0'}`}>
+    <div className={`sticky top-0 z-10 mx-auto p-1 bg-darkBlue transition-opacity duration-[1500ms] ${ isVisible ? 'opacity-100' : 'opacity-0'}`}>
       <Container>
-        <div className=' flex flex-row justify-between w-full p-1'>
+        <div className=' flex flex-row justify-between w-full px-1 h-14'>
           <Image
             className="object-contain sm:object-cover"
             width={50}
@@ -43,8 +49,8 @@ const Navbar: FC<NavbarProps> = () => {
           />
           <div className='flex justify-center items-center gap-x-6'>
             {navItems.map((item) => (
-              <Link key={item} href="/" className="link-container text-darkBeige text-xl">
-                {t(item)}
+              <Link key={item.name} href={item.href} className="link-container text-darkBeige text-xl">
+                {t(item.name)}
               </Link>
             ))}
           </div>

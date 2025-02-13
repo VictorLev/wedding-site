@@ -16,6 +16,10 @@
   --black: #3F4955;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: var(--dark-blue);
   background: var(--background);
