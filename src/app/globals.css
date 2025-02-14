@@ -46,7 +46,8 @@ h1 {
   transition: all 0.3s ease;
 }
 
-.link-container:hover::before {
+.link-container:hover::before,
+.link-container.active::before {
   width: 100%;
   left: 0;
 }

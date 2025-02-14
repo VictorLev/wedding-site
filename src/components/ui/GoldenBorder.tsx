@@ -17,7 +17,7 @@ const GoldenBorder: React.FC<GoldenBorderProps> = ( {
                 {/* Title */}
                 <div className="absolute inset-x-0 -top-4 h-8 w-full flex justify-center">
                     <div className="bg-white px-6">
-                    <h1 className="text-center text-darkBeige italic text-2xl mb-4 tracking-widest">{title}</h1>
+                    <h1 className="text-center text-darkBeige italic text-3xl font-[500] mb-4 tracking-[0.3rem]">{title}</h1>
                     </div>
                 </div>
 

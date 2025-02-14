@@ -1,8 +1,7 @@
 {
     "HomePage": {
-        "title": "Marie-Lie & Victor",
-        "subtitle": "venez célébrer notre mariage",
-        "date": "Le 25 septembre 2026",
+        "subtitle": "Venez célébrer notre mariage",
+        "date": "Le 26 septembre 2026",
         "Place": "Lieu"
     },
     "Faq": {
@@ -23,5 +22,11 @@
     },
     "Footer": {
         "title": "Language"
+    },
+    "FaqPage": {
+        "title": "Frequently Asked Questions"
+    },
+    "RsvpPage": {
+        "title": "Contact Us"
     }
 }

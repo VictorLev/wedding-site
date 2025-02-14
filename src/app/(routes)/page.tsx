@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import {useTranslations} from 'next-intl';
 import bgHome from "@/src/public/images/home.jpg";
@@ -6,39 +7,50 @@ import Manoir from "@/src/public/images/manoir.png";
 import Logo from "@/src/public/images/Wedding_Logo.png";
 import GoldenBorder from "@/src/components/ui/GoldenBorder";
 import { Map  } from "lucide-react";
+import { FC, useEffect, useState } from 'react';
 
 export default function Home() {
   const t = useTranslations('HomePage');
+  const [isVisible, setIsVisible] = useState(false);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 500); // 1 seconds delay
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="overflow-x-hidden">
-      <div id="home" className="absolute top-0 h-[125vh] w-full -z-10 overflow-hidden">
-        <Image 
-          priority
-          src={bgHome} 
-          alt="Home Background" 
-          className="object-cover object-[50%_30%] w-full h-full" 
-        />
-        <div className="absolute bottom-0 h-[25vh] w-full bg-gradient-to-b from-transparent to-white"></div>
-      </div>
-      
-      <div className="relative h-[calc(125vh-theme(height.14)-theme(height.14))] w-full ">
-        <div className="flex flex-col justify-center items-center h-full">
-          <div className="flex flex-col justify-center items-center w-full bg-sky-200/50">
-            <p className="text-5xl text-darkBlue tracking-widest pt-2">
-              {t('title')}
-            </p>
-            <p className="text-xl text-darkBlue font-light tracking-widest pt-2">
-              {t('subtitle')}
-            </p>
-            <p className="text-2xl text-darkBlue font-light tracking-widest pt-2">
-              {t('date')}
-            </p>
+      {/* Home Background */}
+      <section id="home">
+        <div id="home" className="absolute top-0 h-[125vh] w-full -z-10 overflow-hidden">
+          <Image 
+            priority
+            src={bgHome} 
+            alt="Home Background" 
+            className="object-cover object-[50%_30%] w-full h-full" 
+          />
+          <div className="absolute bottom-0 h-[25vh] w-full bg-gradient-to-b from-transparent to-white"></div>
+        </div>
+        
+        <div className="relative h-[calc(125vh-theme(height.14)-theme(height.14))] w-full ">
+          <div className="flex flex-col justify-center items-center h-full">
+            <div className={`flex flex-col justify-center items-center py-2 bg-white/50 duration-[1500ms] ${ isVisible ? 'opacity-100  w-full' : 'opacity-0'}`}>
+              <p className="text-5xl text-darkBlue font-light tracking-widest pt-2">
+                {t('subtitle')}
+              </p>
+              <p className="text-2xl text-darkBlue font-light tracking-widest pt-2">
+                {t('date')}
+              </p>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
+      {/* Place */}
       <Container>
-        <div id="place" className="my-16 ">
+        <section id="place" className="my-16 mb-96">
           <GoldenBorder title={t('Place')}>
             {/* Content Grid */}
             <div className="grid grid-cols-2 gap-8">
@@ -70,7 +82,7 @@ export default function Home() {
               </div>
             </div>
           </GoldenBorder>
-        </div>
+        </section>
       </Container>
 
     </div>
