@@ -2,10 +2,17 @@
     "HomePage": {
         "subtitle": "Venez célébrer notre mariage",
         "date": "Le 26 septembre 2026",
-        "Place": "Lieu"
-    },
-    "Faq": {
-        "title": "About Us"
+        "Place": "Lieu",
+        "Ceremony": "Cérémonie",
+        "Ceremony-time": "5:00 à 5:30 PM",
+        "Reception": "Réception",
+        "Reception-time": "6:00 à 11:00 PM",
+        "Accommodations": "Hébergement",
+        "Gifts": "Cadeaux",
+        "RSVP": "Confirmer votre présence",
+        "SweetMessage": "Merci d’être à nos côtés pour ce bel évênement. Votre amour et votre soutien comptent énormément pour nous, et nous avons hâte de célébrer ce moment avec vous.",
+        "Names": "Maire-Lie & Victor",
+        "Lorem Ipsum": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in sapien eget nisl euismod accumsan. Maecenas accumsan pulvinar arcu, eu aliquet urna congue et. Curabitur vulputate neque in arcu eleifend, quis eleifend mauris consectetur. Sed at dolor augue. Aliquam vestibulum et enim sit amet volutpat. Duis dignissim ex ipsum, a tincidunt tellus porta vel. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed quam pulvinar, mollis tortor quis, placerat tortor. Suspendisse commodo, nisi at gravida aliquet, ligula risus pellentesque nulla, sed cursus sapien nisi sit amet quam. Pellentesque eget nisi id tortor luctus aliquet eu ac libero."
     },
     "Rsvp": {
         "title": "Contact Us"
@@ -21,12 +28,74 @@
         "Rsvp": "RSVP"
     },
     "Footer": {
-        "title": "Language"
+        "title": "Language",
+        "Rights": "Tous droits réservés",
+        "Language": "Langue",
+        "Made with": "Fait avec",
+        "by": "par",
+        "Contact": "Contact",
+        "emailV": "levesque.vic@gmail.com",
+        "phoneV": "514-777-7777",
+        "emailM": "levesquemlie@gmail.com",
+        "phoneM": "514-777-7777"
     },
     "FaqPage": {
-        "title": "Frequently Asked Questions"
+        "title": "Foire aux questions"
+    }
+    ,
+    "FaqQuestions": {
+        "Q1": {
+            "question": "Quel est le code vestimentaire?",
+            "answer": "Le code vestimentaire est semi-formel. Nous voulons que vous vous sentiez à l'aise et que vous profitiez de la journée avec nous. Veuillez porter quelque chose qui vous fait vous sentir bien."
+        },
+        "Q2": {
+            "question": "Puis-je amener un invité?",
+            "answer": "Nous aimerions rencontrer votre partenaire. Veuillez nous informer si vous amenez un invité en remplissant le formulaire RSVP."
+        },
+        "Q3": {
+            "question": "Puis-je amener mes enfants?",
+            "answer": "Nous adorons les enfants! Veuillez nous informer si vous amenez vos enfants en remplissant le formulaire RSVP."
+        },
+        "Q4": {
+            "question": "Quelle est la situation du stationnement?",
+            "answer": "Il y a beaucoup de places de stationnement disponibles sur le site. Veuillez nous informer si vous avez besoin d'accommodements spéciaux."
+        },
+        "Q5": {
+            "question": "Quelle est la politique de cadeaux?",
+            "answer": "Votre présence est le meilleur cadeau que nous pourrions demander. Si vous souhaitez nous offrir quelque chose, nous avons une liste de mariage chez Amazon et Bed Bath & Beyond."
+        },
+        "Q6": {
+            "question": "Puis-je prendre des photos?",
+            "answer": "Nous aimerions que vous preniez des photos et que vous les partagiez avec nous. Veuillez utiliser le hashtag #MaireLieAndVictorWedding pour partager vos souvenirs avec nous."
+        }
     },
     "RsvpPage": {
-        "title": "Contact Us"
+        "title": "Confirmez votre venue",
+        "subtitle": "Nous avons hâte de célébrer avec vous!",
+        "name": "Nom",
+        "firstName": "Prénom",
+        "lastName": "Nom de famille",
+        "activity": "Activité",
+        "fridayBBQ" : "BBQ du vendredi - 6PM",
+        "saturdayCocktail" : "Cocktail du samedi - 1PM",
+        "saturdayCeremony" : "Cérémonie du samedi - 5PM",
+        "saturdayReception" : "Réception du samedi - 6PM",
+        "sundayBrunch" : "Brunch du dimanche - 10AM",
+        "numberOfAdults": "Nombre d'adultes",
+        "numberOfChildren": "Nombre d'enfants",
+        "stayingOnsite": "Restez-vous sur place? Si oui, à quelle hébergement",
+        "select": "Sélectionner",
+        "yes": "Oui",
+        "no": "Non",
+        "accommodations": "Hébergement",
+        "arrivalDate": "Date d'arrivée",
+        "departureDate": "Date de départ",
+        "dietaryRestrictions": "Restrictions alimentaires",
+        "favoriteSong": "Quelle est votre chanson préférée?",
+        "comments": "Commentaires",
+        "leaveComment": "Laissez nous un commentaire...",
+        "submit": "Soumettre",
+        "loading": "Chargement...",
+        "formReceived": "Formulaire reçu ✓"
     }
 }

@@ -1,17 +1,100 @@
 {
     "HomePage": {
-        "title": ""
-    },
-    "Faq": {
-        "title": ""
+        "subtitle": "Come celebrate our wedding",
+        "date": "September 26, 2026",
+        "Place": "Place",
+        "Ceremony": "Ceremony",
+        "Ceremony-time": "5:00 to 5:30 PM",
+        "Reception": "Reception",
+        "Reception-time": "6:00 to 11:00 PM",
+        "Accommodations": "Accommodations",
+        "Gifts": "Gifts",
+        "RSVP": "Confirm your attendance",
+        "SweetMessage": "Thank you for being with us for this beautiful event. Your love and support mean a lot to us, and we look forward to celebrating this moment with you.",
+        "Names": "Maire-Lie & Victor",
+        "Lorem Ipsum": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in sapien eget nisl euismod accumsan. Maecenas accumsan pulvinar arcu, eu aliquet urna congue et. Curabitur vulputate neque in arcu eleifend, quis eleifend mauris consectetur. Sed at dolor augue. Aliquam vestibulum et enim sit amet volutpat. Duis dignissim ex ipsum, a tincidunt tellus porta vel. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed quam pulvinar, mollis tortor quis, placerat tortor. Suspendisse commodo, nisi at gravida aliquet, ligula risus pellentesque nulla, sed cursus sapien nisi sit amet quam. Pellentesque eget nisi id tortor luctus aliquet eu ac libero."
     },
     "Rsvp": {
-        "title": ""
+        "title": "Contact Us"
     },
     "Navbar": {
-        "title": ""
+        "Home": "Home",
+        "Place": "Place",
+        "Ceremony": "Ceremony",
+        "Reception": "Reception",
+        "Accommodations": "Accommodations",
+        "Gifts": "Gifts",
+        "Faq": "Faq",
+        "Rsvp": "RSVP"
     },
     "Footer": {
-        "title": ""
+        "title": "Language",
+        "Rights": "All rights reserved",
+        "Language": "Language",
+        "Made with": "Made with",
+        "by": "by",
+        "Contact": "Contact",
+        "emailV": "levesque.vic@gmail.com",
+        "phoneV": "514-777-7777",
+        "emailM": "levesquemlie@gmail.com",
+        "phoneM": "514-777-7777"
+    },
+    "FaqPage": {
+        "title": "Frequently Asked Questions"
+    },
+    "FaqQuestions": {
+        "Q1": {
+            "question": "What is the dress code?",
+            "answer": "The dress code is semi-formal. We want you to feel comfortable and enjoy the day with us. Please wear something that makes you feel good."
+        },
+        "Q2": {
+            "question": "Can I bring a guest?",
+            "answer": "We would love to meet your partner. Please let us know if you are bringing a guest by filling out the RSVP form."
+        },
+        "Q3": {
+            "question": "Can I bring my children?",
+            "answer": "We love children! Please let us know if you are bringing your children by filling out the RSVP form."
+        },
+        "Q4": {
+            "question": "What is the parking situation?",
+            "answer": "There are plenty of parking spaces available on site. Please let us know if you need special accommodations."
+        },
+        "Q5": {
+            "question": "What is the gift policy?",
+            "answer": "Your presence is the best gift we could ask for. If you wish to give us something, we have a wedding registry at Amazon and Bed Bath & Beyond."
+        },
+        "Q6": {
+            "question": "Can I take photos?",
+            "answer": "We would love for you to take photos and share them with us. Please use the hashtag #MaireLieAndVictorWedding to share your memories with us."
+        }
+    },
+    "RsvpPage": {
+        "title": "Confirm your attendance",
+        "subtitle": "We look forward to celebrating with you!",
+        "name": "Name",
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "activity": "Activity",
+        "fridayBBQ" : "Friday BBQ - 6PM",
+        "saturdayCocktail" : "Saturday Cocktail - 1PM",
+        "saturdayCeremony" : "Saturday Ceremony - 5PM",
+        "saturdayReception" : "Saturday Reception - 6PM",
+        "sundayBrunch" : "Sunday Brunch - 10AM",
+        "numberOfAdults": "Number of adults",
+        "numberOfChildren": "Number of children",
+        "stayingOnsite": "Are you staying on site? If so, at which accommodation",
+        "select": "Select",
+        "yes": "Yes",
+        "no": "No",
+        "accommodations": "Accommodations",
+        "arrivalDate": "Arrival Date",
+        "departureDate": "Departure Date",
+        "dietaryRestrictions": "Dietary Restrictions",
+        "favoriteSong": "What is your favorite song?",
+        "comments": "Comments",
+        "leaveComment": "Leave us a comment...",
+        "submit": "Submit",
+        "loading": "Loading...",
+        "formReceived": "Form received ✓"
     }
 }
