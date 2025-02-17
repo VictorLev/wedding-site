@@ -7,10 +7,17 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
     const { firstName, lastName, activities, adults, children, dietaryRestrictions, favoriteSong, comments, stayingOnsite, accommodations, arrivalDate, departureDate } = req.body;
 
-    try {
-      const spreadsheetId = process.env.GOOGLE_SHEET_ID;
+    const auth = new google.auth.GoogleAuth({
+      credentials: JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT_KEY as string),
+      scopes: ['https://www.googleapis.com/auth/spreadsheets'],
+    });
+    
+    const client = await auth.getClient();
+    const spreadsheetId = process.env.GOOGLE_SHEET_ID;
 
+    try {
       await sheets.spreadsheets.values.append({
+        auth: client,
         spreadsheetId,
         range: 'Sheet1!A:A', // Adjust the range as needed
         valueInputOption: 'USER_ENTERED',
