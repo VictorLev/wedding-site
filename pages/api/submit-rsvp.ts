@@ -17,7 +17,6 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       const spreadsheetId = process.env.GOOGLE_SHEET_ID;
 
       await sheets.spreadsheets.values.append({
-        auth: client,
         spreadsheetId,
         range: 'Sheet1!A:A', // Adjust the range as needed
         valueInputOption: 'USER_ENTERED',
