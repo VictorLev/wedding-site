@@ -13,11 +13,12 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     });
     
     const client = await auth.getClient();
+    google.options({ auth: client }); // Set the auth client globally
+
     const spreadsheetId = process.env.GOOGLE_SHEET_ID;
 
     try {
       await sheets.spreadsheets.values.append({
-        auth: client,
         spreadsheetId,
         range: 'Sheet1!A:A', // Adjust the range as needed
         valueInputOption: 'USER_ENTERED',
