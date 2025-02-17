@@ -18,7 +18,6 @@ const Footer: FC<FooterProps> = () => {
   return (
     <footer className='bg-darkBlue text-darkBeige w-full'>
       <Container>
-
         <div className='flex flex-row justify-between w-full p-4'>
           <div className='flex flex-col gap-4 w-56'>
             <p>
@@ -34,7 +33,6 @@ const Footer: FC<FooterProps> = () => {
               &copy; {new Date().getFullYear()} {t('Rights')}
             </p>
           </div>
-          
           <Image
             className="hidden  object-contain sm:block p-1"
             height={75}

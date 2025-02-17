@@ -9,6 +9,7 @@ import Image from 'next/image';
 import Logo from "@/src/public/images/Wedding_Logo.png";
 import { Menu, X } from 'lucide-react';
 import { usePathname, useRouter } from 'next/navigation';
+import LocaleSwitcher from './LocaleSwitcher';
 
 const Navbar: FC = () => {
   const t = useTranslations('Navbar');
@@ -138,16 +139,18 @@ const Navbar: FC = () => {
     >
       <Container>
         <div className="flex flex-row justify-between w-full px-1 h-14">
-          <Link href={isHomePage ? '/#home' : "/"} onClick={toggleMenu}>
-            <Image
-              className="object-contain sm:object-cover p-1"
-              width={50}
-              priority
-              src={Logo}
-              alt="Wedding Logo"
-            />
-          </Link>
-          <div className="hidden md:flex justify-center items-center gap-x-6">
+          <div className='w-1/4'>
+            <Link href={isHomePage ? '/#home' : "/"} onClick={toggleMenu}>
+              <Image
+                className="object-contain sm:object-cover p-1"
+                width={50}
+                priority
+                src={Logo}
+                alt="Wedding Logo"
+              />
+            </Link>
+          </div>
+          <div className="hidden md:flex md:w-1/2 justify-center items-center gap-x-6">
             {navItems.map((item) => (
               <Link
                 key={item.name}
@@ -161,20 +164,8 @@ const Navbar: FC = () => {
               </Link>
             ))}
           </div>
-          <div className="hidden md:flex justify-center items-center gap-x-6 relative">
-            <button onClick={toggleLocaleMenu} className="text-darkBeige text-xl focus:outline-none">
-              {locale.toUpperCase()}
-            </button>
-            {isLocaleMenuOpen && (
-              <div className="absolute top-full bg-darkBlue text-darkBeige ">
-                <Link locale="fr" href='/' className="block px-4 py-2 hover:bg-gray-200">
-                  FR
-                </Link>
-                <Link locale="en" href="/" className="block px-4 py-2 hover:bg-gray-200">
-                  EN
-                </Link>
-              </div>
-            )}
+          <div className="hidden md:flex md:w-1/4 justify-end items-center gap-x-4 relative">
+            <LocaleSwitcher />
             <Link href="/faq">
               <p className={`link-container text-darkBeige text-xl ${isFaqPage ? 'font-bold' : 'font-normal'}`}>
                 {t('Faq')}
@@ -208,21 +199,7 @@ const Navbar: FC = () => {
                 {t(item.name)}
               </Link>
             ))}
-            <div className="relative">
-              <button onClick={toggleLocaleMenu} className="text-darkBeige text-xl focus:outline-none">
-                {locale.toUpperCase()}
-              </button>
-              {isLocaleMenuOpen && (
-                <div className="absolute top-full mt-2 bg-darkBlue text-darkBlue rounded shadow-lg">
-                  <Link locale="fr" href='/' className="block px-4 py-2 hover:bg-darkBlue">
-                    FR
-                  </Link>
-                  <Link locale="en" href='/' className="block px-4 py-2 hover:bg-darkBlue">
-                    EN
-                  </Link>
-                </div>
-              )}
-            </div>
+            <LocaleSwitcher />
             <Link href="/faq" onClick={toggleMenu}>
               <p className={`text-xl ${isFaqPage ? 'font-bold' : 'font-normal'}`}>
                 {t('Faq')}
