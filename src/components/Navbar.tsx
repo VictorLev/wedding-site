@@ -21,7 +21,6 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState('');
   const [isNavbarVisible, setIsNavbarVisible] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isLocaleMenuOpen, setIsLocaleMenuOpen] = useState(false);
 
   const lastScrollY = useRef(0);
   const isMouseOver = useRef(false);
