@@ -66,7 +66,7 @@ export default function Faq() {
 
       <Container>
         {/* FAQ Section */}
-        <div className="bg-lightBlue p-10 text-left w-3/4">
+        <div className="bg-lightBlue p-4 sm:px-0 sm:py-10 text-left sm:w-3/4">
           {keys.map((key: string, index: number) => (
             <div key={index} className="border-b border-lightBlue py-4">
               <button
