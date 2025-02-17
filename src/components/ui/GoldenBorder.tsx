@@ -6,10 +6,9 @@ interface GoldenBorderProps {
   children: React.ReactNode;
   title: string;
   bg_color: string;
-  rotation?: string;
 }
 
-const GoldenBorder: React.FC<GoldenBorderProps> = ({ children, title, bg_color, rotation }) => {
+const GoldenBorder: React.FC<GoldenBorderProps> = ({ children, title, bg_color }) => {
 
   return (
     <div className="relative flex flex-col items-center justify-center p-10 z-20">

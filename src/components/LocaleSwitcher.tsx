@@ -1,12 +1,10 @@
-import { useLocale, useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
 import { useTransition } from 'react';
-import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 export default function LocaleSwitcher() {
-  const t = useTranslations('LocaleSwitcher');
   const locale = useLocale();
-  const [isPending, startTransition] = useTransition();
+  const [, startTransition] = useTransition();
   const [clientLocale, setClientLocale] = useState(locale);
 
   useEffect(() => {

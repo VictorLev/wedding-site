@@ -6,7 +6,7 @@ import Container from "@/src/components/ui/Container";
 import Manoir from "@/src/public/images/manoir.png";
 import GoldenBorder from "@/src/components/ui/GoldenBorder";
 import { Map  } from "lucide-react";
-import { FC, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Leaf from "@/src/public/images/leaf.svg";
 import Ring from "@/src/public/images/ring.png";
 import Cake from "@/src/public/images/wedding-cake.png";
@@ -74,7 +74,7 @@ export default function Home() {
                 className="absolute top-2/3 -right-48 w-96 rotate-90 scale-x-[-1]"
               />
             </div>
-            <GoldenBorder title={t('Place')} bg_color="bg-white" rotation="rotate-0">
+            <GoldenBorder title={t('Place')} bg_color="bg-white">
               {/* Content Grid */}
               <div className="flex flex-col sm:grid sm:grid-cols-2 gap-8">
                 {/* Image */}

@@ -27,10 +27,11 @@ export default function Rsvp() {
     departureDate: ''
   });
 
-  const handleChange = (e: any) => {
-    const { name, value, type, checked } = e.target;
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value, type } = e.target;
 
     if (type === 'checkbox') {
+      const { checked } = e.target as HTMLInputElement;
       setFormData((prev) => ({
         ...prev,
         activities: checked
@@ -42,7 +43,7 @@ export default function Rsvp() {
     }
   };
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
       const response = await fetch('/api/submit-rsvp', {

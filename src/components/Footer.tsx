@@ -9,11 +9,7 @@ import Logo from "@/src/public/images/Wedding_Logo.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSquareGithub } from '@fortawesome/free-brands-svg-icons'
 
-interface FooterProps {
-  // Define any props if needed, for example, for user info or theme preferences
-}
-
-const Footer: FC<FooterProps> = () => {
+export default function Footer() {
   const t = useTranslations('Footer');
   return (
     <footer className='bg-darkBlue text-darkBeige w-full'>
@@ -52,5 +48,3 @@ const Footer: FC<FooterProps> = () => {
     </footer>
   );
 };
-
-export default Footer;

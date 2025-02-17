@@ -3,17 +3,16 @@
 import Link from 'next/link';
 import Container from "./ui/Container";
 import Button from './ui/Button';
-import { FC, useEffect, useState, useRef } from 'react';
-import { useTranslations, useLocale } from 'next-intl';
+import { useEffect, useState, useRef } from 'react';
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Logo from "@/src/public/images/Wedding_Logo.png";
 import { Menu, X } from 'lucide-react';
 import { usePathname, useRouter } from 'next/navigation';
 import LocaleSwitcher from './LocaleSwitcher';
 
-const Navbar: FC = () => {
+export default function Navbar() {
   const t = useTranslations('Navbar');
-  const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
   const isHomePage = pathname === '/' || (pathname && pathname.startsWith('/#'));
@@ -216,4 +215,3 @@ const Navbar: FC = () => {
   );
 };
 
-export default Navbar;

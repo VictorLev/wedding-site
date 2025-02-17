@@ -1,19 +1,10 @@
 "use client"
 // components/Banner.tsx
-import Link from 'next/link';
 import Container from "./ui/Container";
-import Button from './ui/Button';
 import { FC, useEffect, useState } from 'react';
-import {useTranslations} from 'next-intl';
-import Image from 'next/image';
-import Logo from "@/src/public/images/Wedding_Logo.png";
 import { usePathname } from 'next/navigation';
 
-interface BannerProps {
-  // Define any props if needed, for example, for user info or theme preferences
-}
-
-const Banner: FC<BannerProps> = () => {
+export default function Banner() {
   const pathname = usePathname()
   const isHomePage = pathname === '/' || pathname === '/#home"';
 
@@ -37,5 +28,3 @@ const Banner: FC<BannerProps> = () => {
     </div>
   );
 };
-
-export default Banner;
