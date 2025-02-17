@@ -7,11 +7,6 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
     const { firstName, lastName, activities, adults, children, dietaryRestrictions, favoriteSong, comments, stayingOnsite, accommodations, arrivalDate, departureDate } = req.body;
 
-    const auth = new google.auth.GoogleAuth({
-      credentials: JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT_KEY as string),
-      scopes: ['https://www.googleapis.com/auth/spreadsheets'],
-    });
-
     try {
       const spreadsheetId = process.env.GOOGLE_SHEET_ID;
 
