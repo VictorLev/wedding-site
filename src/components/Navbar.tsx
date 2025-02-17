@@ -28,6 +28,7 @@ const Navbar: FC = () => {
   const isMouseOver = useRef(false);
 
   const navItems = [
+    { name: 'Home', href: '#home' },
     { name: 'Place', href: '#place' },
     { name: 'Ceremony', href: '#ceremony' },
     { name: 'Reception', href: '#reception' },
