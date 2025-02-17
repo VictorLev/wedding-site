@@ -87,7 +87,7 @@ export default function Navbar() {
     sections.forEach((section) => observerRef.observe(section));
 
     return () => observerRef.disconnect();
-  }, [pathname]);
+  }, [pathname, isHomePage]);
 
   // Handle smooth scrolling on page load
   useEffect(() => {

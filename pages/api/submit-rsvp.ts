@@ -13,7 +13,6 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     });
 
     try {
-      const client = await auth.getClient();
       const spreadsheetId = process.env.GOOGLE_SHEET_ID;
 
       await sheets.spreadsheets.values.append({
