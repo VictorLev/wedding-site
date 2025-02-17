@@ -1,7 +1,7 @@
 "use client"
 // components/Banner.tsx
 import Container from "./ui/Container";
-import { FC, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 
 export default function Banner() {

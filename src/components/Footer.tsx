@@ -1,6 +1,5 @@
 // components/Footer.tsx
 import Link from 'next/link';
-import { FC } from 'react';
 import {useTranslations} from 'next-intl';
 import Container from "./ui/Container";
 import Image from 'next/image';

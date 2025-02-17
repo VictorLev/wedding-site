@@ -35,8 +35,6 @@ export default function Navbar() {
     { name: 'Gifts', href: '#gifts' },
   ];
 
-  useEffect(() => { isFaqPage }, [isFaqPage]);
-
   // Initial fade-in effect on homepage
   useEffect(() => {
     let timer: NodeJS.Timeout;
@@ -117,10 +115,6 @@ export default function Navbar() {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-  };
-
-  const toggleLocaleMenu = () => {
-    setIsLocaleMenuOpen(!isLocaleMenuOpen);
   };
 
   return (
