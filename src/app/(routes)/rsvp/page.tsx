@@ -11,6 +11,7 @@ export default function Rsvp() {
   const messages = useMessages();
   const [loading, setLoading] = useState(true);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const [formData, setFormData] = useState({
     firstName: '',
@@ -23,8 +24,7 @@ export default function Rsvp() {
     comments: '',
     stayingOnsite: '',
     accommodations: '',
-    arrivalDate: '',
-    departureDate: ''
+    namePlusOne: '',
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -45,6 +45,7 @@ export default function Rsvp() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
     try {
       const response = await fetch('/api/submit-rsvp', {
         method: 'POST',
@@ -62,6 +63,8 @@ export default function Rsvp() {
       }
     } catch (error) {
       console.error('Error submitting form:', error);
+    } finally {
+      setIsSubmitting(false); // Set submitting state to false
     }
   };
 
@@ -137,12 +140,6 @@ export default function Rsvp() {
                 <input type="checkbox" value="Cocktail" onChange={handleChange} /> {t('saturdayCocktail')}
               </label>
               <label className="block">
-                <input type="checkbox" value="Cérémonie" onChange={handleChange} /> {t('saturdayCeremony')}
-              </label>
-              <label className="block">
-                <input type="checkbox" value="Réception" onChange={handleChange} /> {t('saturdayReception')}
-              </label>
-              <label className="block">
                 <input type="checkbox" value="Brunch" onChange={handleChange} /> {t('sundayBrunch')}
               </label>
             </div>
@@ -152,6 +149,16 @@ export default function Rsvp() {
                 type="number"
                 name="adults"
                 placeholder={t('numberOfAdults')}
+                className="w-full p-2 border border-gray-300 rounded"
+                onChange={handleChange}
+              />
+            </div>
+            <div>
+              <p className="font-semibold">{t('namePlusOne')}</p>
+              <input
+                type="text"
+                name="namePlusOne"
+                placeholder={t('namePlusOne')}
                 className="w-full p-2 border border-gray-300 rounded"
                 onChange={handleChange}
               />
@@ -179,24 +186,6 @@ export default function Rsvp() {
               <input
                 type="text"
                 name="accommodations"
-                className="w-full p-2 border border-gray-300 rounded"
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <p className="font-semibold">{t('arrivalDate')}</p>
-              <input
-                type="date"
-                name="arrivalDate"
-                className="w-full p-2 border border-gray-300 rounded"
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <p className="font-semibold">{t('departureDate')}</p>
-              <input
-                type="date"
-                name="departureDate"
                 className="w-full p-2 border border-gray-300 rounded"
                 onChange={handleChange}
               />
@@ -233,7 +222,7 @@ export default function Rsvp() {
               type="submit"
               className="w-full bg-darkBeige text-white py-2 rounded-lg hover:bg-darkLight"
             >
-              {t('submit')}
+              {isSubmitting ? t('sending') : t('submit')}
             </button>
           </form>
         )}

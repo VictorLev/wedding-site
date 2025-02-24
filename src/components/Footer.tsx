@@ -15,7 +15,7 @@ export default function Footer() {
       <Container>
         <div className='flex flex-row justify-between w-full p-4'>
           <div className='flex flex-col gap-4 w-56'>
-            <p>
+            <p> 
               {t('Made with')} ❤️ {t('by')} Victor Lévesque
               
             </p>
@@ -30,7 +30,7 @@ export default function Footer() {
           </div>
           <Image
             className="hidden  object-contain sm:block p-1"
-            height={75}
+            height={150}
             priority
             src={Logo}
             alt="Wedding Logo"

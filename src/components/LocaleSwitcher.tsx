@@ -6,13 +6,13 @@ export default function LocaleSwitcher() {
   const locale = useLocale();
   const [, startTransition] = useTransition();
   const [clientLocale, setClientLocale] = useState(locale);
-
+  const newLocale = clientLocale === 'en' ? 'fr' : 'en'; // Toggle between 'en' and 'fr'
   useEffect(() => {
     setClientLocale(locale);
   }, [locale]);
 
   function onChange() {
-    const newLocale = clientLocale === 'en' ? 'fr' : 'en'; // Toggle between 'en' and 'fr'
+     
     startTransition(() => {
       document.cookie = `NEXT_LOCALE=${newLocale};`;
       window.location.reload(); // Reload the page to apply the new locale
@@ -20,8 +20,8 @@ export default function LocaleSwitcher() {
   }
 
   return (
-    <button onClick={onChange} className="text-darkBeige link-container text-xl">
-      <span className={`${clientLocale === 'en' ? "font-bold" : ""}`}>EN</span>/<span className={`${clientLocale === 'fr' ? "font-bold" : ""}`}>FR</span>
+    <button onClick={onChange} className="text-darkBeige link-container">
+      <span >{newLocale.toUpperCase()}</span>
     </button>
   );
 }

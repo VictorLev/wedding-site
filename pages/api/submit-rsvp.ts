@@ -5,7 +5,7 @@ const sheets = google.sheets('v4');
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
-    const { firstName, lastName, activities, adults, children, dietaryRestrictions, favoriteSong, comments, stayingOnsite, accommodations, arrivalDate, departureDate } = req.body;
+    const { firstName, lastName, activities, adults, namePlusOne, children, dietaryRestrictions, favoriteSong, comments, stayingOnsite, accommodations  } = req.body;
 
     const auth = await google.auth.getClient({
       credentials: JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT_KEY as string),
@@ -23,7 +23,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
         insertDataOption: 'INSERT_ROWS',
         requestBody: {
           values: [
-            [firstName, lastName, activities.join(', '), adults, children, dietaryRestrictions, favoriteSong, comments, stayingOnsite, accommodations, arrivalDate, departureDate],
+            [firstName, lastName, activities.join(', '), adults, namePlusOne, children, dietaryRestrictions, favoriteSong, comments, stayingOnsite, accommodations],
           ],
         },
       });

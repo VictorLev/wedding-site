@@ -30,6 +30,7 @@ export default function Navbar() {
     { name: 'Place', href: '#place' },
     { name: 'Ceremony', href: '#ceremony' },
     { name: 'Reception', href: '#reception' },
+    { name: 'Schedule', href: '#schedule' },
     { name: 'Accommodations', href: '#accommodations' },
     { name: 'Gifts', href: '#gifts' },
   ];
@@ -131,12 +132,12 @@ export default function Navbar() {
       }}
     >
       <Container>
-        <div className="flex flex-row justify-between w-full px-1 h-14">
+        <div className="flex flex-row justify-between w-full px-1 h-10">
           <div className='w-1/4'>
-            <Link href={isHomePage ? '/#home' : "/"} onClick={toggleMenu}>
+            <Link className='' href={isHomePage ? '/#home' : "/"} onClick={toggleMenu}>
               <Image
                 className="object-contain sm:object-cover p-1"
-                width={50}
+                width={35}
                 priority
                 src={Logo}
                 alt="Wedding Logo"
@@ -149,7 +150,7 @@ export default function Navbar() {
                 key={item.name}
                 href={isHomePage ? item.href : `/${item.href}`}
                 onClick={isHomePage ? (e) => handleNavClick(e, item.href) : undefined}
-                className={`link-container text-darkBeige text-xl ${
+                className={`link-container text-darkBeige ${
                   activeSection === item.href.substring(1) ? 'font-bold' : 'font-normal'
                 }`}
               >
@@ -160,7 +161,7 @@ export default function Navbar() {
           <div className="hidden md:flex md:w-1/4 justify-end items-center gap-x-4 relative">
             <LocaleSwitcher />
             <Link href="/faq">
-              <p className={`link-container text-darkBeige text-xl ${isFaqPage ? 'font-bold' : 'font-normal'}`}>
+              <p className={`link-container text-darkBeige ${isFaqPage ? 'font-bold' : 'font-normal'}`}>
                 {t('Faq')}
               </p>
             </Link>
@@ -180,21 +181,20 @@ export default function Navbar() {
         </div>
       </Container>
       {isMenuOpen && (
-        <div className="md:hidden bg-darkBlue text-darkBeige absolute top-14 right-0 w-full h-screen z-20">
+        <div className="md:hidden bg-darkBlue text-darkBeige absolute top-10 right-0 w-full h-screen z-20">
           <div className="flex flex-col items-center space-y-6 mt-10">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={isHomePage ? item.href : `/${item.href}`}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className="text-xl"
               >
                 {t(item.name)}
               </Link>
             ))}
             <LocaleSwitcher />
             <Link href="/faq" onClick={toggleMenu}>
-              <p className={`text-xl ${isFaqPage ? 'font-bold' : 'font-normal'}`}>
+              <p className={`${isFaqPage ? 'font-bold' : 'font-normal'}`}>
                 {t('Faq')}
               </p>
             </Link>

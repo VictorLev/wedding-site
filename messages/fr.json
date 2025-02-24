@@ -25,9 +25,10 @@
         "Place": "Lieu",
         "Ceremony": "Cérémonie",
         "Reception": "Réception",
+        "Schedule": "Horaire",
         "Accommodations": "Hébergement",
         "Gifts": "Cadeaux",
-        "Faq": "Faq",
+        "Faq": "FAQ",
         "Rsvp": "RSVP"
     },
     "Footer": {
@@ -81,10 +82,9 @@
         "activity": "Activité",
         "fridayBBQ" : "BBQ du vendredi - 6PM",
         "saturdayCocktail" : "Cocktail du samedi - 1PM",
-        "saturdayCeremony" : "Cérémonie du samedi - 5PM",
-        "saturdayReception" : "Réception du samedi - 6PM",
         "sundayBrunch" : "Brunch du dimanche - 10AM",
         "numberOfAdults": "Nombre d'adultes",
+        "namePlusOne": "Nom de votre invité",
         "numberOfChildren": "Nombre d'enfants",
         "stayingOnsite": "Restez-vous sur place? Si oui, à quelle hébergement",
         "select": "Sélectionner",
@@ -98,7 +98,8 @@
         "comments": "Commentaires",
         "leaveComment": "Laissez nous un commentaire...",
         "submit": "Soumettre",
+        "sending": "En Envoi...",
         "loading": "Chargement...",
-        "formReceived": "Formulaire reçu ✓"
+        "formReceived": "Formulaire envoyé ✓"
     }
 }
