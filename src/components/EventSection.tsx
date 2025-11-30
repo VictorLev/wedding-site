@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { useTranslations } from 'next-intl';
-import GoldenBorder from "./ui/GoldenBorder";
 import { EventSection as EventSectionType } from "@/config/weddingData";
 
 interface EventSectionProps {

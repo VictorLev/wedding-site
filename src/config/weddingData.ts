@@ -2,8 +2,6 @@ import { StaticImageData } from 'next/image';
 import Manoir from "@/public/images/manoir.png";
 import Ring from "@/public/images/ring.png";
 import Cake from "@/public/images/wedding-cake.png";
-import StoneHaven from "@/public/images/accommodations/StoneHaven.png";
-import Super8 from "@/public/images/accommodations/Super8.png";
 import Gift from "@/public/images/gift.png";
 import bgHome from "@/public/images/home.jpg";
 
