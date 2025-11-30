@@ -97,7 +97,7 @@ export default function Rsvp() {
       </div>
       <div className="relative h-[75vh] w-full ">
         <div className="flex flex-col justify-center items-center h-full">
-          <p className="text-5xl text-white drop-shadow-lg font-light tracking-widest pt-2 text-center">
+          <p className="text-5xl text-darkerBlue drop-shadow-lg font-light tracking-widest pt-2 text-center">
             {t('title')}
           </p>
         </div>
@@ -106,7 +106,7 @@ export default function Rsvp() {
       <Container>
         {isSubmitted ? (
           <div className="flex justify-center items-center h-48">
-            <p className="text-2xl text-darkBlue">{t('formReceived')}</p>
+            <p className="text-2xl text-darkerBlue">{t('formReceived')}</p>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4 w-full sm:w-1/2 p-4 mb-32">
@@ -226,7 +226,7 @@ export default function Rsvp() {
             </div>
             <button
               type="submit"
-              className="w-full bg-darkBeige text-white py-2 rounded-lg hover:bg-darkLight"
+              className="w-full bg-mediumBlue text-darkerBlue py-2 rounded-lg hover:bg-blue"
             >
               {isSubmitting ? t('sending') : t('submit')}
             </button>

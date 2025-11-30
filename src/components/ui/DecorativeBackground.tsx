@@ -1,58 +1,50 @@
+'use client';
 import Image from "next/image";
 import Leaf from "@/public/images/leaf.svg";
-
-interface LeafPosition {
-  top?: string;
-  bottom?: string;
-  left?: string;
-  right?: string;
-  rotation: string;
-  scale?: string;
-}
 
 interface DecorativeBackgroundProps {
   variant?: 'place' | 'ceremony' | 'reception' | 'accommodations' | 'gifts';
 }
 
-const leafPositions: Record<string, LeafPosition[]> = {
+// Fixed leaf positions for each variant - neat and uniform with rotation variance
+const leafPositions: Record<string, Array<{ top: string; left: string; rotation: number; scale: number; flipX: boolean }>> = {
   place: [
-    { top: '10', left: '-48', rotation: 'rotate-0' },
-    { top: '2/3', right: '-48', rotation: 'rotate-90 scale-x-[-1]' }
+    { top: '15%', left: '10%', rotation: 45, scale: 0.8, flipX: false },
+    { top: '25%', left: '85%', rotation: 135, scale: 0.9, flipX: true },
+    { top: '70%', left: '20%', rotation: 225, scale: 0.7, flipX: false },
+    { top: '80%', left: '90%', rotation: 315, scale: 0.85, flipX: true },
+    { top: '50%', left: '50%', rotation: 180, scale: 0.75, flipX: false },
   ],
   ceremony: [
-    { top: '0', left: '-48', rotation: 'rotate-90' },
-    { top: '3/4', right: '-48', rotation: 'rotate-180 scale-x-[-1]' }
-  ],
-  reception: [
-    { top: '5', left: '-48', rotation: '-rotate-[130deg]' },
-    { top: '3/4', right: '0', rotation: '-rotate-90 scale-x-[-1]' }
-  ],
-  accommodations: [
-    { top: '5', left: '-96', rotation: 'rotate-[130deg]' },
-    { top: '3/4', right: '-48', rotation: 'rotate-90 scale-x-[-1]' }
-  ],
-  gifts: [
-    { top: '5', left: '-96', rotation: 'rotate-[130deg]' },
-    { top: '0', right: '-48', rotation: '-rotate-90 scale-x-[-1]' }
+    { top: '20%', left: '15%', rotation: 60, scale: 0.85, flipX: true },
+    { top: '30%', left: '80%', rotation: 150, scale: 0.9, flipX: false },
+    { top: '65%', left: '25%', rotation: 240, scale: 0.8, flipX: true },
+    { top: '75%', left: '85%', rotation: 330, scale: 0.75, flipX: false },
   ]
 };
 
 const DecorativeBackground: React.FC<DecorativeBackgroundProps> = ({ variant = 'place' }) => {
-  const positions = leafPositions[variant];
+  const leaves = leafPositions[variant] || leafPositions.place;
 
   return (
-    <div className="absolute inset-0 opacity-[0.04] z-10">
-      {positions.map((pos, index) => (
-        <Image
+    <div className="absolute inset-0 opacity-[0.04] z-10 pointer-events-none overflow-hidden">
+      {leaves.map((leaf, index) => (
+        <div
           key={index}
-          src={Leaf}
-          alt="Decorative Leaf"
-          className={`absolute w-96 ${pos.rotation}
-            ${pos.top ? `top-${pos.top}` : ''}
-            ${pos.bottom ? `bottom-${pos.bottom}` : ''}
-            ${pos.left ? `-left-${pos.left}` : ''}
-            ${pos.right ? `-right-${pos.right}` : ''}`}
-        />
+          className="absolute w-64 h-64"
+          style={{
+            top: leaf.top,
+            left: leaf.left,
+            transform: `translate(-50%, -50%) rotate(${leaf.rotation}deg) scale(${leaf.scale}) ${leaf.flipX ? 'scaleX(-1)' : ''}`
+          }}
+        >
+          <Image
+            src={Leaf}
+            alt=""
+            fill
+            className="object-contain"
+          />
+        </div>
       ))}
     </div>
   );

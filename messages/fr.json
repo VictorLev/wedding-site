@@ -3,13 +3,19 @@
         "label": "En"
     },
     "HomePage": {
-        "subtitle": "Test, Venez célébrer notre mariage",
+        "subtitle": "Venez célébrer notre mariage",
         "date": "Le 26 septembre 2026",
+        "InvitationText": "Veuillez rejoindre Marie-Lie et Victor le 26 septembre 2026 pour célébrer notre mariage",
         "Place": "Lieu",
         "Ceremony": "Cérémonie",
-        "Ceremony-time": "5:00 à 5:30 PM",
+        "Ceremony-time": "3:00 à 4:00 PM",
+        "Ceremony-description": "La cérémonie aura lieu dans le magnifique Manoir Davis. Rejoignez-nous pour célébrer ce moment spécial.",
+        "Cocktail": "Cocktail",
+        "Cocktail-time": "4:00 à 6:00 PM",
+        "Cocktail-description": "Profitez d'un cocktail élégant avec des boissons et des amuse-gueules délicieux.",
         "Reception": "Réception",
         "Reception-time": "6:00 à 11:00 PM",
+        "Reception-description": "Rejoignez-nous pour une soirée de danse, de dîner et de célébration.",
         "Accommodations": "Hébergement",
         "Gifts": "Cadeaux",
         "RSVP": "Confirmer votre présence",
@@ -21,15 +27,11 @@
         "title": "Contact Us"
     },
     "Navbar": {
-        "Home": "Acceuil",
-        "Place": "Lieu",
-        "Ceremony": "Cérémonie",
-        "Reception": "Réception",
-        "Schedule": "Horaire",
-        "Accommodations": "Hébergement",
-        "Gifts": "Cadeaux",
+        "Wedding": "Marriage",
+        "Story": "Notre Histoire",
         "Faq": "FAQ",
-        "Rsvp": "RSVP"
+        "Rsvp": "RSVP",
+        "Names": "Maire-Lie & Victor"
     },
     "Footer": {
         "title": "Language",
@@ -101,5 +103,36 @@
         "sending": "En Envoi...",
         "loading": "Chargement...",
         "formReceived": "Formulaire envoyé ✓"
+    },
+    "StoryPage": {
+        "title": "Notre Histoire",
+        "subtitle": "Chaque histoire d'amour est belle, mais la nôtre est notre préférée. Voici comment notre aventure a commencé."
+    },
+    "StoryTimeline": {
+        "Event1": {
+            "date": "Été 2015",
+            "title": "Première Rencontre",
+            "description": "Nous nous sommes rencontrés pour la première fois lors d'une fête d'un ami commun. Nous ne savions pas que cette rencontre fortuite changerait nos vies pour toujours."
+        },
+        "Event2": {
+            "date": "Décembre 2015",
+            "title": "Premier Rendez-vous",
+            "description": "Notre premier rendez-vous officiel était dans un café chaleureux du centre-ville. Nous avons parlé pendant des heures et nous savions qu'il y avait quelque chose de spécial entre nous."
+        },
+        "Event3": {
+            "date": "Juin 2018",
+            "title": "Emménagement Ensemble",
+            "description": "Nous avons décidé de franchir la prochaine étape et d'emménager ensemble. Construire notre foyer ensemble nous a rapprochés encore plus."
+        },
+        "Event4": {
+            "date": "Août 2023",
+            "title": "La Demande",
+            "description": "Lors d'un voyage romantique dans les montagnes, Victor a fait sa demande. Bien sûr, Marie-Lie a dit oui!"
+        },
+        "Event5": {
+            "date": "Septembre 2026",
+            "title": "Notre Jour de Mariage",
+            "description": "Nous avons hâte de célébrer notre amour avec vous tous lors de notre journée spéciale!"
+        }
     }
 }

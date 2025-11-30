@@ -11,7 +11,7 @@ import { faSquareGithub } from '@fortawesome/free-brands-svg-icons'
 export default function Footer() {
   const t = useTranslations('Footer');
   return (
-    <footer className='bg-darkBlue text-darkBeige w-full'>
+    <footer className='bg-darkerBlue text-lightBlue w-full'>
       <Container>
         <div className='flex flex-row justify-between w-full p-4'>
           <div className='flex flex-col gap-4 w-56'>
@@ -20,7 +20,7 @@ export default function Footer() {
               
             </p>
             <div className='flex flex-row gap-2 items-center '>
-              Code <Link href="https://github.com/VictorLev/wedding-site" className='text-darkBeige h-6 w-6'>
+              Code <Link href="https://github.com/VictorLev/wedding-site" className='text-lightBlue h-6 w-6'>
               <FontAwesomeIcon icon={faSquareGithub} size='lg'/>
               </Link>
             </div>
@@ -29,7 +29,7 @@ export default function Footer() {
             </p>
           </div>
           <Image
-            className="hidden  object-contain sm:block p-1"
+            className="hidden object-contain sm:block p-1 brightness-0 invert"
             height={150}
             priority
             src={Logo}

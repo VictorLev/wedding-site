@@ -9,13 +9,14 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --white: #ffffff;
-  --dun: #E4D3B8;
-  --tan: #D8BD91;
-  --light-blue: #D8EFFF;
-  --blue: #95C9E9;
-  --dark-blue: #15315A;
-  --black: #3F4955;
+  --white: #E8F0F8;
+  --pale-blue: #E8F0F8;
+  --light-blue: #CEE0F1;
+  --medium-blue: #A7C1D9;
+  --blue: #84A1C4;
+  --dark-blue: #60789B;
+  --darker-blue: #1f497a;
+  --charcoal: #3F4955;
 }
 
 html {
@@ -23,7 +24,7 @@ html {
 }
 
 body {
-  color: var(--dark-blue);
+  color: var(--darker-blue);
   background: var(--background);
   font-family: 'Fraunces', serif;
 }
@@ -44,7 +45,7 @@ h1 {
   left: 50%;
   width: 0;
   height: 2px;
-  background-color: var(--tan); /* the color of the line */
+  background-color: var(--blue); /* the color of the line */
   transition: all 0.3s ease;
 }
 

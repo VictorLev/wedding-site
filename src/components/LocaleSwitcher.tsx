@@ -2,7 +2,11 @@ import { useLocale } from 'next-intl';
 import { useRouter } from 'next/navigation';
 import { useTransition } from 'react';
 
-export default function LocaleSwitcher() {
+interface LocaleSwitcherProps {
+  textColor?: string;
+}
+
+export default function LocaleSwitcher({ textColor = 'text-darkerBlue' }: LocaleSwitcherProps) {
   const locale = useLocale();
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
@@ -18,7 +22,7 @@ export default function LocaleSwitcher() {
   return (
     <button
       onClick={onChange}
-      className="text-darkBeige link-container"
+      className={`${textColor} link-container text-sm tracking-wider`}
       aria-label={`Switch to ${newLocale === 'en' ? 'English' : 'French'}`}
       disabled={isPending}
     >

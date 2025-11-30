@@ -5,7 +5,7 @@ interface LoadingProps {
 const Loading: React.FC<LoadingProps> = ({ message = 'Loading...' }) => {
   return (
     <div className="flex justify-center items-center h-screen">
-      <p className="text-xl text-darkBlue">{message}</p>
+      <p className="text-xl text-darkerBlue">{message}</p>
     </div>
   );
 };

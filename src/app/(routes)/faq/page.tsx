@@ -55,7 +55,7 @@ export default function Faq() {
       {/* Banner */}
       <div className="relative h-[75vh] w-full ">
         <div className="flex flex-col justify-center items-center h-full">
-          <p className="text-5xl text-white drop-shadow-lg font-light tracking-widest pt-2 text-center">
+          <p className="text-5xl text-darkerBlue drop-shadow-lg font-light tracking-widest pt-2 text-center">
             {f('title')}
           </p>
         </div>
@@ -78,7 +78,7 @@ export default function Faq() {
                   openIndexes.includes(index) ? 'max-h-screen' : 'max-h-0'
                 }`}
               >
-                <p className="px-4 mt-2 text-darkBlue">{t(`${key}.answer`)}</p>
+                <p className="px-4 mt-2 text-darkerBlue">{t(`${key}.answer`)}</p>
               </div>
             </div>
           ))}

@@ -41,7 +41,7 @@ export interface Accommodation {
 
 export const venue: VenueInfo = {
   name: "Manoir Davis",
-  date: "25 septembre 2026",
+  date: "26 septembre 2026",
   address: {
     street: "92 Chemin Sir-Mortimer-B.-Davis",
     city: "Sainte-Agathe-des-Monts",
@@ -55,8 +55,7 @@ export const venue: VenueInfo = {
 
 export const homeSection = {
   id: "home",
-  backgroundImage: bgHome,
-  bgColor: 'bg-white' as const
+  backgroundImage: bgHome
 };
 
 export const eventSections: EventSection[] = [
@@ -64,44 +63,27 @@ export const eventSections: EventSection[] = [
     id: "ceremony",
     titleKey: "Ceremony",
     timeKey: "Ceremony-time",
-    descriptionKey: "Lorem Ipsum",
+    descriptionKey: "Ceremony-description",
     icon: Ring,
     iconAlt: "Wedding rings",
+    bgColor: "bg-lightBlue"
+  },
+  {
+    id: "cocktail",
+    titleKey: "Cocktail",
+    timeKey: "Cocktail-time",
+    descriptionKey: "Cocktail-description",
+    icon: Gift,
+    iconAlt: "Cocktail drinks",
     bgColor: "bg-lightBlue"
   },
   {
     id: "reception",
     titleKey: "Reception",
     timeKey: "Reception-time",
-    descriptionKey: "Lorem Ipsum",
+    descriptionKey: "Reception-description",
     icon: Cake,
     iconAlt: "Wedding cake",
-    bgColor: "bg-white"
+    bgColor: "bg-lightBlue"
   }
 ];
-
-export const accommodations: Accommodation[] = [
-  {
-    id: "stonehaven",
-    name: "StoneHaven Le Manoir",
-    image: StoneHaven,
-    imageAlt: "StoneHaven Le Manoir",
-    descriptionKey: "Lorem Ipsum"
-  },
-  {
-    id: "super8",
-    name: "Super 8",
-    image: Super8,
-    imageAlt: "Super 8 Hotel",
-    descriptionKey: "Lorem Ipsum"
-  }
-];
-
-export const giftsSection = {
-  id: "gifts",
-  titleKey: "Gifts",
-  descriptionKey: "Lorem Ipsum",
-  icon: Gift,
-  iconAlt: "Gift box",
-  bgColor: "bg-white" as const
-};

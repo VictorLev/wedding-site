@@ -7,16 +7,12 @@ import { Map } from "lucide-react";
 
 import GoldenBorder from "@/components/ui/GoldenBorder";
 import Section from "@/components/ui/Section";
-import Button from "@/components/ui/Button";
 import EventSection from "@/components/EventSection";
-import AccommodationCard from "@/components/AccommodationCard";
 
 import {
   venue,
   homeSection,
-  eventSections,
-  accommodations,
-  giftsSection
+  eventSections
 } from "@/config/weddingData";
 
 export default function Home() {
@@ -31,37 +27,62 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden bg-lightBlue">
       {/* Home */}
-      <section id={homeSection.id}>
-        {/* Home Background */}
-        <div className="absolute top-0 h-[125vh] w-full -z-10 overflow-hidden">
-          <Image
-            priority
-            src={homeSection.backgroundImage}
-            alt="Home Background"
-            className="object-cover object-[50%_30%] w-full h-full opacity-0 animate-fadeIn"
-          />
-          <div className="absolute bottom-0 h-12 sm:h-[25vh] w-full bg-gradient-to-b from-transparent to-white"></div>
+      <section id={homeSection.id} className="relative">
+        {/* Home Background with Kenburns Effect */}
+        <div className="absolute top-0 h-screen w-full overflow-hidden">
+          <div className="w-full h-full relative">
+            <Image
+              priority
+              src={homeSection.backgroundImage}
+              alt="Home Background"
+              className="object-cover w-full h-full animate-kenburns"
+              fill
+              style={{ objectPosition: '50% 50%' }}
+            />
+          </div>
+          {/* Subtle overlay */}
+          <div className="absolute inset-0 bg-black/5"></div>
+          {/* Top gradient for navbar visibility */}
+          <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black/30 to-transparent"></div>
         </div>
-        {/* Banner */}
-        <div className="relative h-[125vh] w-full">
-          <div className="flex flex-col justify-center items-center h-full">
-            <div className={`flex flex-col justify-center items-center py-2 bg-white/50 duration-[1500ms] ${isVisible ? 'opacity-100 w-full' : 'opacity-0'}`}>
-              <p className="text-5xl text-darkBlue font-light tracking-widest text-center pt-2">
-                {t('subtitle')}
-              </p>
-              <p className="text-2xl text-darkBlue font-light tracking-widest pt-2">
-                {t('date')}
-              </p>
-            </div>
+
+        {/* Hero Content - Centered */}
+        <div className="relative h-screen w-full flex flex-col justify-center items-center">
+          <div className={`flex flex-col items-center duration-[1500ms] transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+            {/* Large Centered Names */}
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white font-light tracking-wide text-center mb-8 px-4">
+              {t('Names')}
+            </h1>
+
+            {/* Date and Location */}
+            <p className="text-sm sm:text-base md:text-lg text-white tracking-widest text-center mb-12 px-4">
+              {venue.date} · {venue.address.city}, {venue.address.province}
+            </p>
+
+            {/* RSVP Button */}
+            <Link href="/rsvp">
+              <button className="px-8 py-3 border-2 border-white text-white text-sm tracking-widest hover:bg-white hover:text-darkerBlue transition-all duration-300">
+                {t('RSVP')}
+              </button>
+            </Link>
           </div>
         </div>
       </section>
 
+      {/* Invitation Text */}
+      <div className="bg-lightBlue pt-12 pb-8 px-4">
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="text-xl md:text-3xl text-darkerBlue font-light leading-relaxed tracking-wide">
+            {t('InvitationText')}
+          </p>
+        </div>
+      </div>
+
       {/* Place */}
-      <Section id="place" bgColor="bg-white" nextBgColor="bg-lightBlue" decorativeVariant="place">
-        <GoldenBorder title={t('Place')} bg_color="bg-white">
+      <Section>
+        <GoldenBorder title={t('Place')} bg_color="bg-lightBlue">
           <div className="flex flex-col sm:grid sm:grid-cols-2 gap-8">
             {/* Image */}
             <div className="flex justify-center p-6">
@@ -96,55 +117,17 @@ export default function Home() {
             </div>
           </div>
         </GoldenBorder>
-        <div className="relative flex justify-center mt-4 z-20">
-          <Link href="/rsvp">
-            <Button>{t('RSVP')}</Button>
-          </Link>
-        </div>
       </Section>
 
       {/* Ceremony */}
-      <Section id="ceremony" bgColor="bg-lightBlue" nextBgColor="bg-white" decorativeVariant="ceremony">
-        <EventSection section={eventSections[0]} reverse={true} />
-      </Section>
-
-      {/* Reception */}
-      <Section id="reception" bgColor="bg-white" nextBgColor="bg-lightBlue" decorativeVariant="reception">
-        <EventSection section={eventSections[1]} />
-      </Section>
-
-      {/* Accommodations */}
-      <Section id="accommodations" bgColor="bg-lightBlue" nextBgColor="bg-white" decorativeVariant="accommodations">
-        <GoldenBorder title={t('Accommodations')} bg_color="bg-lightBlue">
-          {accommodations.map((accommodation) => (
-            <AccommodationCard key={accommodation.id} accommodation={accommodation} />
-          ))}
+      <Section>
+        <GoldenBorder title={t('Ceremony')} bg_color="bg-lightBlue">
+          <EventSection section={eventSections[0]} reverse={true} />
+          <EventSection section={eventSections[1]} />
+          <EventSection section={eventSections[2]} reverse={true} />
         </GoldenBorder>
       </Section>
 
-      {/* Gifts */}
-      <Section id={giftsSection.id} bgColor={giftsSection.bgColor} decorativeVariant="gifts">
-        <GoldenBorder title={t(giftsSection.titleKey)} bg_color={giftsSection.bgColor}>
-          <div className="flex flex-col sm:grid sm:grid-cols-2 gap-8">
-            {/* Icon */}
-            <div className="text-center flex flex-col justify-center items-center text-darkBlue">
-              <Image
-                src={giftsSection.icon}
-                alt={giftsSection.iconAlt}
-                width={300}
-                height={300}
-                className="object-cover object-center text-darkBlue rounded"
-                priority
-              />
-            </div>
-            {/* Text */}
-            <div className="flex flex-col justify-center p-6 text-center">
-              <h2 className="text-xl font-bold">{t(giftsSection.descriptionKey)}</h2>
-              <div>{t(giftsSection.descriptionKey)}</div>
-            </div>
-          </div>
-        </GoldenBorder>
-      </Section>
 
       <div className='relative flex flex-col text-center justify-center items-center w-2/3 py-4 mx-auto mb-12'>
         <p className='text-2xl p-2'>

@@ -2,69 +2,81 @@
 
 import Link from 'next/link';
 import Container from "./ui/Container";
-import Button from './ui/Button';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
-import Image from 'next/image';
-import Logo from "@/public/images/Wedding_Logo.png";
 import { Menu, X } from 'lucide-react';
 import { usePathname, useRouter } from 'next/navigation';
 import LocaleSwitcher from './LocaleSwitcher';
 
 export default function Navbar() {
   const t = useTranslations('Navbar');
+  const h = useTranslations('HomePage');
   const router = useRouter();
   const pathname = usePathname();
   const isHomePage = pathname === '/' || (pathname && pathname.startsWith('/#'));
   const isFaqPage = pathname === '/faq';
 
   const [activeSection, setActiveSection] = useState('');
-  const [isNavbarVisible, setIsNavbarVisible] = useState(false);
+  const [isNavbarVisible, setIsNavbarVisible] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const lastScrollY = useRef(0);
-  const isMouseOver = useRef(false);
+  const [isOnHomeSection, setIsOnHomeSection] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'Place', href: '#place' },
-    { name: 'Ceremony', href: '#ceremony' },
-    { name: 'Reception', href: '#reception' },
-    { name: 'Schedule', href: '#schedule' },
-    { name: 'Accommodations', href: '#accommodations' },
-    { name: 'Gifts', href: '#gifts' },
+    { name: 'Wedding', href: '' },
+    { name: 'Story', href: 'story' }
   ];
 
-  // Initial fade-in effect on homepage
+  // Intersection Observer to detect if home section is in view
   useEffect(() => {
-    let timer: NodeJS.Timeout;
-    if (isHomePage) {
-      timer = setTimeout(() => setIsNavbarVisible(true), 500);
-    } else {
-      setIsNavbarVisible(true);
+    if (!isHomePage) {
+      setIsOnHomeSection(false);
+      return;
     }
-    return () => clearTimeout(timer);
-  }, [isHomePage]);
 
-  // Scroll behavior
+    const homeSection = document.querySelector('#home');
+    if (!homeSection) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          // Set to true if home section is visible (even partially)
+          setIsOnHomeSection(entry.isIntersecting);
+        });
+      },
+      {
+        threshold: 0,
+        rootMargin: '-80px 0px 0px 0px' // Account for navbar height
+      }
+    );
+
+    observer.observe(homeSection);
+
+    return () => observer.disconnect();
+  }, [isHomePage, pathname]);
+
+  // Scroll detection for navbar hide/show
   useEffect(() => {
+    if (!isHomePage) return;
+
     const handleScroll = () => {
-      if (isMouseOver.current) return; // Don't hide navbar if hovered
+      const scrollPosition = window.scrollY;
 
-      const currentScrollY = window.scrollY;
-
-      if (currentScrollY > lastScrollY.current && currentScrollY > 50) {
-        setIsNavbarVisible(false); // Hide on scroll down
+      // Hide navbar when scrolling down, show when scrolling up
+      if (scrollPosition > lastScrollY && scrollPosition > 100) {
+        // Scrolling down
+        setIsNavbarVisible(false);
       } else {
-        setIsNavbarVisible(true); // Show on scroll up
+        // Scrolling up
+        setIsNavbarVisible(true);
       }
 
-      lastScrollY.current = currentScrollY;
+      setLastScrollY(scrollPosition);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isHomePage, lastScrollY]);
 
   // Intersection Observer for active section tracking
   useEffect(() => {
@@ -102,14 +114,7 @@ export default function Navbar() {
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
-    if (isHomePage) {
-      const target = document.querySelector(href);
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
-    } else {
-      router.push(`/${href}`);
-    }
+    router.push(`/${href}`);
     toggleMenu();
   };
 
@@ -117,95 +122,95 @@ export default function Navbar() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  // Determine text color based on whether we're viewing the home section
+  const textColor = isHomePage && isOnHomeSection ? 'text-white' : 'text-darkerBlue';
+  const bgColor = isHomePage && isOnHomeSection ? 'bg-transparent' : 'bg-lightBlue';
+
   return (
     <div
-      className={`sticky top-0 w-full z-40 bg-darkBlue transition-all duration-[500ms]
-        ${isNavbarVisible ? 'opacity-100' : 'opacity-0'}
+      className={`${isHomePage ? 'fixed' : 'sticky'} top-0 w-full z-40 ${bgColor} transition-all duration-500
+        ${isNavbarVisible ? 'translate-y-0' : '-translate-y-full'}
       `}
-      onMouseEnter={() => {
-        isMouseOver.current = true;
-        setIsNavbarVisible(true);
-      }}
-      onMouseLeave={() => {
-        isMouseOver.current = false;
-        if (window.scrollY > 50) setIsNavbarVisible(false);
-      }}
     >
       <Container>
-        <div className="flex flex-row justify-between w-full px-1 h-10">
-          <div className='w-1/4'>
-            <Link className='' href={isHomePage ? '/#home' : "/"} onClick={toggleMenu}>
-              <Image
-                className="object-contain sm:object-cover p-1"
-                width={35}
-                priority
-                src={Logo}
-                alt="Wedding Logo"
-              />
+        <div className="flex flex-row justify-between items-center w-full py-6 px-4">
+          {/* Left Side - Names/Logo */}
+          <div className="flex items-center">
+            <Link href="/">
+              <h2 className={`text-xl sm:text-2xl ${textColor} font-light tracking-wide transition-colors duration-500`}>
+                {h('Names')}
+              </h2>
             </Link>
           </div>
-          <div className="hidden md:flex md:w-1/2 justify-center items-center gap-x-6">
-            {navItems.map((item) => (
+
+          {/* Right Side - Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-x-6">
+            {navItems.filter(item => item.name !== 'Home').map((item) => (
               <Link
                 key={item.name}
-                href={isHomePage ? item.href : `/${item.href}`}
-                onClick={isHomePage ? (e) => handleNavClick(e, item.href) : undefined}
-                className={`link-container text-darkBeige ${
-                  activeSection === item.href.substring(1) ? 'font-bold' : 'font-normal'
+                href={item.href}
+                onClick={(e) => handleNavClick(e, item.href)}
+                className={`${textColor} text-sm tracking-wide hover:opacity-70 transition-all duration-500 ${
+                  activeSection === item.href.substring(1) ? 'font-semibold' : 'font-normal'
                 }`}
               >
                 {t(item.name)}
               </Link>
             ))}
-          </div>
-          <div className="hidden md:flex md:w-1/4 justify-end items-center gap-x-4 relative">
-            <LocaleSwitcher />
             <Link href="/faq">
-              <p className={`link-container text-darkBeige ${isFaqPage ? 'font-bold' : 'font-normal'}`}>
+              <p className={`${textColor} text-sm tracking-wide hover:opacity-70 transition-all duration-500 ${isFaqPage ? 'font-semibold' : 'font-normal'}`}>
                 {t('Faq')}
               </p>
             </Link>
             <Link href="/rsvp">
-              <Button>{t('Rsvp')}</Button>
+              <button className={`px-6 py-2 ${isHomePage && isOnHomeSection ? 'border-white text-white hover:bg-white hover:text-darkerBlue' : 'border-darkerBlue text-darkerBlue hover:bg-darkerBlue hover:text-white'} border-2 text-sm tracking-wide transition-all duration-500`}>
+                {t('Rsvp')}
+              </button>
             </Link>
+            <LocaleSwitcher textColor={textColor} />
           </div>
+
+          {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
             <button
               onClick={toggleMenu}
-              className="text-darkBeige focus:outline-none"
+              className={`${textColor} focus:outline-none transition-colors duration-500`}
               aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={isMenuOpen}
             >
               {isMenuOpen ? (
-                <X className="h-8 w-8" />
+                <X className="h-6 w-6" />
               ) : (
-                <Menu className="h-8 w-8" />
+                <Menu className="h-6 w-6" />
               )}
             </button>
           </div>
         </div>
       </Container>
+
+      {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-darkBlue text-darkBeige absolute top-10 right-0 w-full h-screen z-20">
-          <div className="flex flex-col items-center space-y-6 mt-10">
+        <div className="md:hidden bg-white text-darkerBlue absolute top-full left-0 w-full shadow-lg">
+          <div className="flex flex-col items-start px-6 py-4 space-y-4">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={isHomePage ? item.href : `/${item.href}`}
                 onClick={(e) => handleNavClick(e, item.href)}
+                className="text-darkerBlue hover:opacity-70"
               >
                 {t(item.name)}
               </Link>
             ))}
-            <LocaleSwitcher />
             <Link href="/faq" onClick={toggleMenu}>
-              <p className={`${isFaqPage ? 'font-bold' : 'font-normal'}`}>
+              <p className="text-darkerBlue hover:opacity-70">
                 {t('Faq')}
               </p>
             </Link>
             <Link href="/rsvp" onClick={toggleMenu}>
-              <Button>{t('Rsvp')}</Button>
+              <p className="text-darkerBlue font-semibold hover:opacity-70">{t('Rsvp')}</p>
             </Link>
+            <LocaleSwitcher textColor="text-darkerBlue" />
           </div>
         </div>
       )}

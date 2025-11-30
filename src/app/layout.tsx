@@ -4,7 +4,6 @@ import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
 import {NextIntlClientProvider} from 'next-intl';
 import {getLocale, getMessages} from 'next-intl/server';
-import Banner from "../components/Banner";
 
 
 export const metadata: Metadata = {
@@ -27,7 +26,6 @@ export default async function RootLayout({
     <html lang={locale}>
       <body>
         <NextIntlClientProvider messages={messages}>
-          <Banner />
           <Navbar />
           {children}
           <Footer />

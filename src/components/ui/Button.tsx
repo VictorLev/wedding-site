@@ -11,8 +11,8 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
     const baseClasses = "px-2 font-bold text-xl transition-colors duration-300";
     const variantClasses = variant === 'primary'
-        ? "bg-darkBeige text-darkBlue hover:bg-lightBeige"
-        : "bg-lightBlue text-darkBlue hover:bg-darkBeige";
+        ? "bg-mediumBlue text-darkerBlue hover:bg-lightBlue"
+        : "bg-lightBlue text-darkerBlue hover:bg-mediumBlue";
 
     return (
         <button

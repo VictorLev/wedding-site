@@ -20,7 +20,7 @@ const AccommodationCard: React.FC<AccommodationCardProps> = ({ accommodation }) 
             alt={accommodation.imageAlt}
             width={300}
             height={300}
-            className="object-cover object-center text-darkBlue rounded"
+            className="object-cover object-center text-darkerBlue rounded"
             priority
           />
         </div>

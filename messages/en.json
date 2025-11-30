@@ -5,11 +5,17 @@
     "HomePage": {
         "subtitle": "Come celebrate our wedding",
         "date": "September 26, 2026",
+        "InvitationText": "Please join Marie-Lie and Victor on September 26, 2026 as we celebrate our wedding",
         "Place": "Venue",
         "Ceremony": "Ceremony",
         "Ceremony-time": "5:00 to 5:30 PM",
+        "Ceremony-description": "The ceremony will take place at the beautiful Davis Manor. Join us to celebrate this special moment.",
+        "Cocktail": "Cocktail",
+        "Cocktail-time": "5:30 to 6:00 PM",
+        "Cocktail-description": "Enjoy an elegant cocktail with delicious drinks and appetizers.",
         "Reception": "Reception",
         "Reception-time": "6:00 to 11:00 PM",
+        "Reception-description": "Join us for an evening of dancing, dining, and celebration.",
         "Accommodations": "Accommodations",
         "Gifts": "Gifts",
         "RSVP": "Confirm your attendance",
@@ -21,15 +27,11 @@
         "title": "Contact Us"
     },
     "Navbar": {
-        "Home": "Home",
-        "Place": "Venue",
-        "Ceremony": "Ceremony",
-        "Reception": "Reception",
-        "Schedule": "Schedule",
-        "Accommodations": "Accommodations",
-        "Gifts": "Gifts",
+        "Wedding": "Wedding",
+        "Story": "Our Story",
         "Faq": "FAQ",
-        "Rsvp": "RSVP"
+        "Rsvp": "RSVP",
+        "Names": "Maire-Lie & Victor"
     },
     "Footer": {
         "title": "Language",
@@ -100,5 +102,36 @@
         "sending": "Sending...",
         "loading": "Loading...",
         "formReceived": "Form sent ✓"
+    },
+    "StoryPage": {
+        "title": "Our Story",
+        "subtitle": "Every love story is beautiful, but ours is our favorite. Here's how our journey began."
+    },
+    "StoryTimeline": {
+        "Event1": {
+            "date": "Summer 2015",
+            "title": "First Meeting",
+            "description": "We first met at a mutual friend's party. Little did we know, this chance encounter would change our lives forever."
+        },
+        "Event2": {
+            "date": "December 2015",
+            "title": "First Date",
+            "description": "Our first official date was at a cozy coffee shop downtown. We talked for hours and knew there was something special between us."
+        },
+        "Event3": {
+            "date": "June 2018",
+            "title": "Moving In Together",
+            "description": "We decided to take the next step and move in together. Building our home together brought us even closer."
+        },
+        "Event4": {
+            "date": "August 2023",
+            "title": "The Proposal",
+            "description": "During a romantic trip to the mountains, Victor proposed. Of course, Marie-Lie said yes!"
+        },
+        "Event5": {
+            "date": "September 2026",
+            "title": "Our Wedding Day",
+            "description": "We can't wait to celebrate our love with all of you on our special day!"
+        }
     }
 }
