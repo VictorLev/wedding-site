@@ -3,7 +3,7 @@ import Link from 'next/link';
 import {useTranslations} from 'next-intl';
 import Container from "./ui/Container";
 import Image from 'next/image';
-import Logo from "@/src/public/images/Wedding_Logo.png";
+import Logo from "@/public/images/Wedding_Logo.png";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSquareGithub } from '@fortawesome/free-brands-svg-icons'

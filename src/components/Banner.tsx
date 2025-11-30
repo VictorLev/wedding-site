@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 
 export default function Banner() {
   const pathname = usePathname()
-  const isHomePage = pathname === '/' || pathname === '/#home"';
+  const isHomePage = pathname === '/' || pathname === '/#home';
 
     const [isVisible, setIsVisible] = useState(false);
   

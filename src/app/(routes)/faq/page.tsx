@@ -3,8 +3,9 @@
 import { useState , useEffect } from 'react';
 import Image from 'next/image';
 import { useTranslations, useMessages } from 'next-intl';
-import Lake from '@/src/public/images/lake.jpg';
-import Container from '@/src/components/ui/Container';
+import Lake from '@/public/images/lake.jpg';
+import Container from '@/components/ui/Container';
+import Loading from '@/components/ui/Loading';
 import { Plus } from 'lucide-react';
 import { Minus } from 'lucide-react';
 
@@ -32,11 +33,7 @@ export default function Faq() {
   };
 
   if (loading) {
-    return (
-      <div className="flex justify-center items-center h-screen">
-        <p>Loading...</p>
-      </div>
-    );
+    return <Loading />;
   }
 
   const keys = Object.keys(messages.FaqQuestions);

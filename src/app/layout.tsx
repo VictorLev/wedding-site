@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Footer from '@/src/components/Footer'
-import Navbar from '@/src/components/Navbar'
+import Footer from '@/components/Footer'
+import Navbar from '@/components/Navbar'
 import {NextIntlClientProvider} from 'next-intl';
 import {getLocale, getMessages} from 'next-intl/server';
 import Banner from "../components/Banner";
