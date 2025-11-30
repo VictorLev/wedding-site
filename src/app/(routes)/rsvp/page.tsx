@@ -3,8 +3,9 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { useTranslations, useMessages } from 'next-intl';
-import Beach from '@/src/public/images/beach.jpg';
-import Container from '@/src/components/ui/Container';
+import Beach from '@/public/images/beach.jpg';
+import Container from '@/components/ui/Container';
+import Loading from '@/components/ui/Loading';
 
 export default function Rsvp() {
   const t = useTranslations('RsvpPage');
@@ -12,6 +13,7 @@ export default function Rsvp() {
   const [loading, setLoading] = useState(true);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const [formData, setFormData] = useState({
     firstName: '',
@@ -46,6 +48,8 @@ export default function Rsvp() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError(null);
+
     try {
       const response = await fetch('/api/submit-rsvp', {
         method: 'POST',
@@ -56,15 +60,15 @@ export default function Rsvp() {
       });
 
       if (response.ok) {
-        console.log('Form submitted successfully');
         setIsSubmitted(true);
       } else {
-        console.error('Failed to submit form');
+        const errorData = await response.json().catch(() => ({}));
+        setError(errorData.message || t('submitError'));
       }
-    } catch (error) {
-      console.error('Error submitting form:', error);
+    } catch {
+      setError(t('networkError'));
     } finally {
-      setIsSubmitting(false); // Set submitting state to false
+      setIsSubmitting(false);
     }
   };
 
@@ -75,11 +79,7 @@ export default function Rsvp() {
   }, [messages]);
 
   if (loading) {
-    return (
-      <div className="flex justify-center items-center h-screen">
-        <p>{t('loading')}</p>
-      </div>
-    );
+    return <Loading message={t('loading')} />;
   }
 
   return (
@@ -110,6 +110,12 @@ export default function Rsvp() {
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4 w-full sm:w-1/2 p-4 mb-32">
+            {error && (
+              <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                <strong className="font-bold">Error: </strong>
+                <span className="block sm:inline">{error}</span>
+              </div>
+            )}
             <div>
               <p className="font-semibold">{t('name')}</p>
               <div className="flex space-x-4">

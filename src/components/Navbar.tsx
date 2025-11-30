@@ -6,7 +6,7 @@ import Button from './ui/Button';
 import { useEffect, useState, useRef } from 'react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import Logo from "@/src/public/images/Wedding_Logo.png";
+import Logo from "@/public/images/Wedding_Logo.png";
 import { Menu, X } from 'lucide-react';
 import { usePathname, useRouter } from 'next/navigation';
 import LocaleSwitcher from './LocaleSwitcher';
@@ -170,7 +170,12 @@ export default function Navbar() {
             </Link>
           </div>
           <div className="md:hidden flex items-center">
-            <button onClick={toggleMenu} className="text-darkBeige focus:outline-none">
+            <button
+              onClick={toggleMenu}
+              className="text-darkBeige focus:outline-none"
+              aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={isMenuOpen}
+            >
               {isMenuOpen ? (
                 <X className="h-8 w-8" />
               ) : (

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Logo from "@/src/public/images/Wedding_Logo.png";
+import Logo from "@/public/images/Wedding_Logo.png";
 
 
 interface GoldenBorderProps {

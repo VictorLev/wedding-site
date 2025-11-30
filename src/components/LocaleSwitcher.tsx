@@ -1,27 +1,28 @@
 import { useLocale } from 'next-intl';
+import { useRouter } from 'next/navigation';
 import { useTransition } from 'react';
-import { useEffect, useState } from 'react';
 
 export default function LocaleSwitcher() {
   const locale = useLocale();
-  const [, startTransition] = useTransition();
-  const [clientLocale, setClientLocale] = useState(locale);
-  const newLocale = clientLocale === 'en' ? 'fr' : 'en'; // Toggle between 'en' and 'fr'
-  useEffect(() => {
-    setClientLocale(locale);
-  }, [locale]);
+  const router = useRouter();
+  const [isPending, startTransition] = useTransition();
+  const newLocale = locale === 'en' ? 'fr' : 'en';
 
   function onChange() {
-     
     startTransition(() => {
-      document.cookie = `NEXT_LOCALE=${newLocale};`;
-      window.location.reload(); // Reload the page to apply the new locale
+      document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=31536000`;
+      router.refresh();
     });
   }
 
   return (
-    <button onClick={onChange} className="text-darkBeige link-container">
-      <span >{newLocale.toUpperCase()}</span>
+    <button
+      onClick={onChange}
+      className="text-darkBeige link-container"
+      aria-label={`Switch to ${newLocale === 'en' ? 'English' : 'French'}`}
+      disabled={isPending}
+    >
+      <span>{newLocale.toUpperCase()}</span>
     </button>
   );
 }
