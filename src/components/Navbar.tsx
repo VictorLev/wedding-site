@@ -18,7 +18,7 @@ export default function Navbar() {
   const isStoryPage = pathname?.includes('/story');
   const isAccommodationsPage = pathname?.includes('/accommodations');
 
-
+  const [activeSection, setActiveSection] = useState('');
   const [isNavbarVisible, setIsNavbarVisible] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isOnHomeSection, setIsOnHomeSection] = useState(true);
