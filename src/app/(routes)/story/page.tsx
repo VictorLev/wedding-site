@@ -4,6 +4,9 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { useTranslations, useMessages } from 'next-intl';
 import Lake from '@/public/images/lake.jpg';
+import Story1 from '@/public/images/story-1.jpg';
+import Story2 from '@/public/images/story-2.jpg';
+import Story3 from '@/public/images/story-3.jpg';
 import Container from '@/components/ui/Container';
 import Loading from '@/components/ui/Loading';
 import { Heart } from 'lucide-react';
@@ -16,6 +19,7 @@ interface TimelineEvent {
 
 export default function Story() {
   const t = useTranslations('StoryPage');
+  const tTimeline = useTranslations('StoryTimeline');
   const messages = useMessages();
   const [loading, setLoading] = useState(true);
 
@@ -29,17 +33,19 @@ export default function Story() {
     return <Loading />;
   }
 
+  const timelineImages = [Story1, Story2, Story3];
+
   const timelineKeys = Object.keys(messages.StoryTimeline || {});
   const timelineEvents: TimelineEvent[] = timelineKeys.map((key) => ({
-    date: t(`../StoryTimeline.${key}.date`),
-    title: t(`../StoryTimeline.${key}.title`),
-    description: t(`../StoryTimeline.${key}.description`),
+    date: tTimeline(`${key}.date`),
+    title: tTimeline(`${key}.title`),
+    description: tTimeline(`${key}.description`),
   }));
 
   return (
     <div className="relative bg-lightBlue">
       {/* Story Background */}
-      <div className="absolute top-0 h-[75vh] w-full overflow-hidden">
+      <div className="absolute top-0 h-[50vh] w-full overflow-hidden">
         <div className="relative h-full w-full">
           <Image
             priority
@@ -47,19 +53,18 @@ export default function Story() {
             alt="Lake Background"
             className="object-cover object-[50% 50%] w-full h-full opacity-0 animate-fadeIn"
           />
-          <div className="absolute bottom-0 h-4 sm:h-[10vh] w-full bg-gradient-to-b from-transparent to-lightBlue"></div>
+          <div className="absolute bottom-0 h-4 sm:h-[5vh] w-full bg-gradient-to-b from-transparent to-lightBlue"></div>
         </div>
       </div>
 
       {/* Banner */}
-      <div className="relative h-[75vh] w-full">
+      <div className="relative h-[50vh] w-full">
         <div className="flex flex-col justify-center items-center h-full">
-          <p className="text-5xl text-darkerBlue drop-shadow-lg font-light tracking-widest pt-2 text-center">
+          <h1 className="text-7xl text-darkerBlue drop-shadow-lg font-light tracking-widest pt-2 text-center">
             {t('title')}
-          </p>
+          </h1>
         </div>
       </div>
-
       <Container>
         {/* Introduction */}
         <div className="bg-lightBlue py-10 text-center">
@@ -70,44 +75,55 @@ export default function Story() {
 
         {/* Timeline */}
         <div className="relative bg-lightBlue pb-20">
-          <div className="max-w-4xl mx-auto px-4">
-            {timelineEvents.map((event, index) => (
-              <div key={index} className="relative pb-12 last:pb-0">
-                {/* Timeline line */}
-                {index !== timelineEvents.length - 1 && (
-                  <div className="absolute left-6 sm:left-1/2 top-12 w-0.5 h-full bg-gold -translate-x-1/2"></div>
-                )}
+          {/* Continuous vertical line - hidden on mobile */}
+          <div className="hidden sm:block absolute left-1/2 top-0 bottom-20 w-0.5 bg-mediumBlue -translate-x-1/2"></div>
 
+          <div className="max-w-6xl mx-auto px-4">
+            {timelineEvents.map((event, index) => (
+              <div key={index} className="relative pb-16 last:pb-0">
                 {/* Timeline content */}
-                <div className={`flex flex-col sm:flex-row items-start sm:items-center gap-4 ${
-                  index % 2 === 0 ? 'sm:flex-row' : 'sm:flex-row-reverse'
+                <div className={`flex flex-col sm:grid sm:grid-cols-2 gap-8 items-start ${
+                  index % 2 === 0 ? '' : 'sm:grid-flow-dense'
                 }`}>
-                  {/* Left side (or right on odd items) */}
-                  <div className={`flex-1 ${index % 2 === 0 ? 'sm:text-right' : 'sm:text-left'} ${
-                    index % 2 === 0 ? 'sm:pr-8' : 'sm:pl-8'
-                  } hidden sm:block`}>
-                    <p className="text-gold font-semibold text-lg">{event.date}</p>
+                  {/* Image */}
+                  <div className={`w-full p-8 ${index % 2 === 0 ? '' : 'sm:col-start-2'}`}>
+                    {timelineImages[index] ? (
+                      <div className="rounded-lg overflow-hidden shadow-lg aspect-[4/3] relative">
+                        <Image
+                          src={timelineImages[index]}
+                          alt={`${event.title} - ${event.date}`}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    ) : (
+                      <div className="bg-white/50 rounded-lg aspect-[4/3] flex items-center justify-center text-darkerBlue/30">
+                        {/* Placeholder for future image */}
+                        <span className="text-sm">Image placeholder</span>
+                      </div>
+                    )}
                   </div>
 
-                  {/* Center dot */}
-                  <div className="relative z-10 flex-shrink-0">
-                    <div className="w-12 h-12 rounded-full bg-gold flex items-center justify-center shadow-lg">
+                  {/* Center dot - positioned absolutely */}
+                  <div className="absolute left-6 sm:left-1/2 top-[40%] sm:-translate-x-1/2 z-10">
+                    <div className="w-12 h-12 rounded-full bg-darkerBlue flex items-center justify-center shadow-lg">
                       <Heart className="w-6 h-6 text-white fill-white" />
                     </div>
                   </div>
 
-                  {/* Right side (or left on odd items) */}
-                  <div className={`flex-1 ${index % 2 === 0 ? 'sm:pl-8' : 'sm:pr-8'}`}>
-                    <div className="bg-white p-6 rounded-lg shadow-md">
-                      {/* Mobile date - shown only on small screens */}
-                      <p className="text-gold font-semibold text-lg mb-2 sm:hidden">{event.date}</p>
-
-                      <h3 className="text-darkerBlue font-semibold text-xl mb-2">
-                        {event.title}
-                      </h3>
-                      <p className="text-darkerBlue">
-                        {event.description}
-                      </p>
+                  {/* Text content with date */}
+                  <div className={`w-full h-full flex items-center gap-4 items-start ${index % 2 === 0 ? '' : 'sm:col-start-1 sm:row-start-1'}`}>
+                    {/* Text card */}
+                    <div className={`flex-1 ${index % 2 === 0 ? 'sm:ml-auto sm:pl-12' : 'sm:mr-auto sm:pr-12'}`}>
+                      <div className="bg-white p-6 rounded-lg shadow-md ml-16 sm:ml-0">
+                        <p className="text-darkerBlue font-semibold text-lg mb-2">{event.date}</p>
+                        <h3 className="text-darkerBlue font-semibold text-xl mb-2">
+                          {event.title}
+                        </h3>
+                        <p className="text-darkerBlue">
+                          {event.description}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>

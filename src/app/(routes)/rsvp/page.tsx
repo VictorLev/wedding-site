@@ -18,31 +18,19 @@ export default function Rsvp() {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
-    activities: [] as string[],
     adults: '',
-    children: '',
     dietaryRestrictions: '',
     favoriteSong: '',
     comments: '',
     stayingOnsite: '',
     accommodations: '',
-    namePlusOne: '',
+    plusOneFirstName: '',
+    plusOneLastName: '',
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value, type } = e.target;
-
-    if (type === 'checkbox') {
-      const { checked } = e.target as HTMLInputElement;
-      setFormData((prev) => ({
-        ...prev,
-        activities: checked
-          ? [...prev.activities, value]
-          : prev.activities.filter((activity) => activity !== value),
-      }));
-    } else {
-      setFormData({ ...formData, [name]: value });
-    }
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -83,155 +71,172 @@ export default function Rsvp() {
   }
 
   return (
-    <div className='relative bg-white'>
-      <div className="absolute top-0 h-[75vh] w-full overflow-hidden">
+    <div className='relative bg-lightBlue min-h-screen'>
+      <div className="absolute top-0 h-[50vh] w-full overflow-hidden">
         <div className='relative h-full w-full'>
-          <Image 
+          <Image
             priority
-            src={Beach} 
-            alt="Beach Background" 
-            className="object-cover object-[50%_75%] w-full h-full opacity-0 animate-fadeIn" 
+            src={Beach}
+            alt="Beach Background"
+            className="object-cover object-[50%_75%] w-full h-full opacity-0 animate-fadeIn"
           />
-          <div className="absolute bottom-0 h-4 sm:h-[10vh] w-full bg-gradient-to-b from-transparent to-white"></div>
+          <div className="absolute bottom-0 h-4 sm:h-[5vh] w-full bg-gradient-to-b from-transparent to-lightBlue"></div>
         </div>
       </div>
-      <div className="relative h-[75vh] w-full ">
-        <div className="flex flex-col justify-center items-center h-full">
-          <p className="text-5xl text-darkerBlue drop-shadow-lg font-light tracking-widest pt-2 text-center">
-            {t('title')}
-          </p>
+      <div className="relative h-[50vh] w-full">
+        <div className="flex flex-col justify-center items-center h-full px-4">
+          <div className="rounded-lg shadow-lg p-8 max-w-3xl bg-lightBlue ">
+            <h1 className="text-5xl sm:text-7xl text-darkerBlue font-light tracking-widest text-center">
+              {t('title')}
+            </h1>
+            <p className="text-lg sm:text-xl text-darkerBlue font-light mt-4 text-center">
+              {t('subtitle')}
+            </p>
+          </div>
         </div>
       </div>
 
       <Container>
-        {isSubmitted ? (
-          <div className="flex justify-center items-center h-48">
-            <p className="text-2xl text-darkerBlue">{t('formReceived')}</p>
-          </div>
-        ) : (
-          <form onSubmit={handleSubmit} className="space-y-4 w-full sm:w-1/2 p-4 mb-32">
-            {error && (
-              <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-                <strong className="font-bold">Error: </strong>
-                <span className="block sm:inline">{error}</span>
+        <div className="py-10 px-4">
+          {isSubmitted ? (
+            <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-8 text-center">
+              <div className="mb-4">
+                <svg className="w-16 h-16 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
               </div>
-            )}
-            <div>
-              <p className="font-semibold">{t('name')}</p>
-              <div className="flex space-x-4">
+              <h2 className="text-3xl text-darkerBlue font-light mb-4">{t('formReceived')}</h2>
+              <p className="text-darkerBlue">We look forward to celebrating with you!</p>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-8 space-y-6 mb-20">
+              {error && (
+                <div className="bg-red-50 border-l-4 border-red-400 p-4 rounded" role="alert">
+                  <div className="flex items-center">
+                    <svg className="w-5 h-5 text-red-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                    </svg>
+                    <div>
+                      <p className="text-red-800 font-medium">We're sorry, something went wrong</p>
+                      <p className="text-red-700 text-sm mt-1">Please try again or contact us directly if the problem persists.</p>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              <div>
+                <label className="block text-darkerBlue font-semibold mb-2">{t('name')}</label>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <input
+                    type="text"
+                    name="firstName"
+                    placeholder={t('firstName')}
+                    className="w-full p-3 border border-mediumBlue rounded-lg focus:outline-none focus:ring-2 focus:ring-blue transition-all"
+                    onChange={handleChange}
+                    required
+                  />
+                  <input
+                    type="text"
+                    name="lastName"
+                    placeholder={t('lastName')}
+                    className="w-full p-3 border border-mediumBlue rounded-lg focus:outline-none focus:ring-2 focus:ring-blue transition-all"
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+              </div>
+
+
+
+              <div>
+                <label className="block text-darkerBlue font-semibold mb-2">{t('namePlusOne')}</label>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <input
+                    type="text"
+                    name="plusOneFirstName"
+                    placeholder={t('firstName')}
+                    className="w-full p-3 border border-mediumBlue rounded-lg focus:outline-none focus:ring-2 focus:ring-blue transition-all"
+                    onChange={handleChange}
+                  />
+                  <input
+                    type="text"
+                    name="plusOneLastName"
+                    placeholder={t('lastName')}
+                    className="w-full p-3 border border-mediumBlue rounded-lg focus:outline-none focus:ring-2 focus:ring-blue transition-all"
+                    onChange={handleChange}
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-darkerBlue font-semibold mb-2">{t('stayingOnsite')}</label>
+                <select
+                  name="stayingOnsite"
+                  className="w-full p-3 border border-mediumBlue rounded-lg focus:outline-none focus:ring-2 focus:ring-blue transition-all bg-white"
+                  onChange={handleChange}
+                >
+                  <option value="">{t('select')}</option>
+                  <option value="yes">{t('yes')}</option>
+                  <option value="no">{t('no')}</option>
+                </select>
+              </div>
+
+              {formData.stayingOnsite === 'yes' && (
+                <div>
+                  <label className="block text-darkerBlue font-semibold mb-2">{t('accommodations')}</label>
+                  <input
+                    type="text"
+                    name="accommodations"
+                    placeholder="Which accommodation?"
+                    className="w-full p-3 border border-mediumBlue rounded-lg focus:outline-none focus:ring-2 focus:ring-blue transition-all"
+                    onChange={handleChange}
+                  />
+                </div>
+              )}
+
+              <div>
+                <label className="block text-darkerBlue font-semibold mb-2">{t('dietaryRestrictions')}</label>
+                <textarea
+                  name="dietaryRestrictions"
+                  placeholder={t('dietaryRestrictions')}
+                  rows={3}
+                  className="w-full p-3 border border-mediumBlue rounded-lg focus:outline-none focus:ring-2 focus:ring-blue transition-all resize-none"
+                  onChange={handleChange}
+                />
+              </div>
+
+              <div>
+                <label className="block text-darkerBlue font-semibold mb-2">{t('favoriteSong')}</label>
                 <input
                   type="text"
-                  name="firstName"
-                  placeholder={t('firstName')}
-                  className="w-1/2 p-2 border border-gray-300 rounded"
+                  name="favoriteSong"
+                  placeholder={t('favoriteSong')}
+                  className="w-full p-3 border border-mediumBlue rounded-lg focus:outline-none focus:ring-2 focus:ring-blue transition-all"
                   onChange={handleChange}
-                  required
-                />
-                <input
-                  type="text"
-                  name="lastName"
-                  placeholder={t('lastName')}
-                  className="w-1/2 p-2 border border-gray-300 rounded"
-                  onChange={handleChange}
-                  required
                 />
               </div>
-            </div>
-            <div className="space-y-2">
-              <p className="font-semibold">{t('activity')}</p>
-              <label className="block">
-                <input type="checkbox" value="BBQ" onChange={handleChange} /> {t('fridayBBQ')}
-              </label>
-              <label className="block">
-                <input type="checkbox" value="Cocktail" onChange={handleChange} /> {t('saturdayCocktail')}
-              </label>
-              <label className="block">
-                <input type="checkbox" value="Brunch" onChange={handleChange} /> {t('sundayBrunch')}
-              </label>
-            </div>
-            <div>
-              <p className="font-semibold">{t('numberOfAdults')}</p>
-              <input
-                type="number"
-                name="adults"
-                placeholder={t('numberOfAdults')}
-                className="w-full p-2 border border-gray-300 rounded"
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <p className="font-semibold">{t('namePlusOne')}</p>
-              <input
-                type="text"
-                name="namePlusOne"
-                placeholder={t('namePlusOne')}
-                className="w-full p-2 border border-gray-300 rounded"
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <p className="font-semibold">{t('numberOfChildren')}</p>
-              <input
-                type="number"
-                name="children"
-                placeholder={t('numberOfChildren')}
-                className="w-full p-2 border border-gray-300 rounded"
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <p className="font-semibold">{t('stayingOnsite')}</p>
-              <select name="stayingOnsite" className="w-full p-2 border border-gray-300 rounded" onChange={handleChange}>
-                <option value="">{t('select')}</option>
-                <option value="yes">{t('yes')}</option>
-                <option value="no">{t('no')}</option>
-              </select>
-            </div>
-            <div>
-              <p className="font-semibold">{t('accommodations')}</p>
-              <input
-                type="text"
-                name="accommodations"
-                className="w-full p-2 border border-gray-300 rounded"
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <p className="font-semibold">{t('dietaryRestrictions')}</p>
-              <textarea
-                name="dietaryRestrictions"
-                placeholder={t('dietaryRestrictions')}
-                className="w-full p-2 border border-gray-300 rounded"
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <p className='font-semibold'>{t('favoriteSong')}</p>
-              <input
-                type="text"
-                name="favoriteSong"
-                placeholder={t('favoriteSong')}
-                className="w-full p-2 border border-gray-300 rounded"
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <p className="font-semibold">{t('comments')}</p>
-              <textarea
-                name="comments"
-                placeholder={t('leaveComment')}
-                className="w-full p-2 border border-gray-300 rounded"
-                onChange={handleChange}
-              />
-            </div>
-            <button
-              type="submit"
-              className="w-full bg-mediumBlue text-darkerBlue py-2 rounded-lg hover:bg-blue"
-            >
-              {isSubmitting ? t('sending') : t('submit')}
-            </button>
-          </form>
-        )}
+
+              <div>
+                <label className="block text-darkerBlue font-semibold mb-2">{t('comments')}</label>
+                <textarea
+                  name="comments"
+                  placeholder={t('leaveComment')}
+                  rows={4}
+                  className="w-full p-3 border border-mediumBlue rounded-lg focus:outline-none focus:ring-2 focus:ring-blue transition-all resize-none"
+                  onChange={handleChange}
+                />
+              </div>
+
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full bg-darkerBlue text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isSubmitting ? t('sending') : t('submit')}
+              </button>
+            </form>
+          )}
+        </div>
       </Container>
     </div>
   );

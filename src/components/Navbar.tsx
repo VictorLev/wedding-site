@@ -14,7 +14,10 @@ export default function Navbar() {
   const router = useRouter();
   const pathname = usePathname();
   const isHomePage = pathname === '/' || (pathname && pathname.startsWith('/#'));
-  const isFaqPage = pathname === '/faq';
+  const isFaqPage = pathname?.includes('/faq');
+  const isStoryPage = pathname?.includes('/story');
+  const isRsvpPage = pathname?.includes('/rsvp');
+  const isAccommodationsPage = pathname?.includes('/accommodations');
 
   const [activeSection, setActiveSection] = useState('');
   const [isNavbarVisible, setIsNavbarVisible] = useState(true);
@@ -24,7 +27,8 @@ export default function Navbar() {
 
   const navItems = [
     { name: 'Wedding', href: '' },
-    { name: 'Story', href: 'story' }
+    { name: 'Story', href: 'story' },
+    { name: 'Accommodations', href: 'accommodations' }
   ];
 
   // Intersection Observer to detect if home section is in view
@@ -145,20 +149,24 @@ export default function Navbar() {
 
           {/* Right Side - Desktop Navigation */}
           <div className="hidden md:flex items-center gap-x-6">
-            {navItems.filter(item => item.name !== 'Home').map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                onClick={(e) => handleNavClick(e, item.href)}
-                className={`${textColor} text-sm tracking-wide hover:opacity-70 transition-all duration-500 ${
-                  activeSection === item.href.substring(1) ? 'font-semibold' : 'font-normal'
-                }`}
-              >
-                {t(item.name)}
-              </Link>
-            ))}
+            {navItems.filter(item => item.name !== 'Home').map((item) => {
+              const isActive =
+                item.name === 'Story' ? isStoryPage :
+                item.name === 'Accommodations' ? isAccommodationsPage :
+                (item.name === 'Wedding' && isHomePage);
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  onClick={(e) => handleNavClick(e, item.href)}
+                  className={`${textColor} link-container ${isActive ? 'active' : ''} text-sm tracking-wide transition-all duration-500`}
+                >
+                  {t(item.name)}
+                </Link>
+              );
+            })}
             <Link href="/faq">
-              <p className={`${textColor} text-sm tracking-wide hover:opacity-70 transition-all duration-500 ${isFaqPage ? 'font-semibold' : 'font-normal'}`}>
+              <p className={`${textColor} link-container ${isFaqPage ? 'active' : ''} text-sm tracking-wide transition-all duration-500`}>
                 {t('Faq')}
               </p>
             </Link>
@@ -188,32 +196,67 @@ export default function Navbar() {
         </div>
       </Container>
 
-      {/* Mobile Menu */}
-      {isMenuOpen && (
-        <div className="md:hidden bg-white text-darkerBlue absolute top-full left-0 w-full shadow-lg">
-          <div className="flex flex-col items-start px-6 py-4 space-y-4">
-            {navItems.map((item) => (
+      {/* Mobile Menu - Full Page Overlay */}
+      <div
+        className={`md:hidden fixed inset-0 z-50 transition-transform duration-300 ease-in-out ${
+          isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+        style={{ backgroundColor: '#CEE0F1', minHeight: '100vh', width: '100vw' }}
+      >
+        <Container>
+          <div className="flex flex-row justify-between items-center w-full py-6 px-4">
+            {/* Left Side - Names/Logo */}
+            <div className="flex items-center">
+              <Link href="/" onClick={toggleMenu}>
+                <h2 className="text-xl sm:text-2xl text-darkerBlue font-light tracking-wide">
+                  {h('Names')}
+                </h2>
+              </Link>
+            </div>
+
+            {/* Close Button */}
+            <button
+              onClick={toggleMenu}
+              className="text-darkerBlue focus:outline-none"
+              aria-label="Close menu"
+            >
+              <X className="h-6 w-6" />
+            </button>
+          </div>
+        </Container>
+
+        {/* Menu Items */}
+        <div className="flex flex-col items-center justify-center h-[calc(100vh-100px)] space-y-8">
+          {navItems.map((item, index) => {
+            const isActive =
+              item.name === 'Story' ? isStoryPage :
+              item.name === 'Accommodations' ? isAccommodationsPage :
+              (item.name === 'Wedding' && isHomePage);
+            return (
               <Link
                 key={item.name}
-                href={isHomePage ? item.href : `/${item.href}`}
+                href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className="text-darkerBlue hover:opacity-70"
+                className={`text-darkerBlue link-container ${isActive ? 'active' : ''} text-2xl tracking-wide transition-all duration-300 hover:scale-110`}
+                style={{ animationDelay: `${index * 100}ms` }}
               >
                 {t(item.name)}
               </Link>
-            ))}
-            <Link href="/faq" onClick={toggleMenu}>
-              <p className="text-darkerBlue hover:opacity-70">
-                {t('Faq')}
-              </p>
-            </Link>
-            <Link href="/rsvp" onClick={toggleMenu}>
-              <p className="text-darkerBlue font-semibold hover:opacity-70">{t('Rsvp')}</p>
-            </Link>
-            <LocaleSwitcher textColor="text-darkerBlue" />
-          </div>
+            );
+          })}
+          <Link href="/faq" onClick={toggleMenu}>
+            <p className={`text-darkerBlue link-container ${isFaqPage ? 'active' : ''} text-2xl tracking-wide transition-all duration-300 hover:scale-110`}>
+              {t('Faq')}
+            </p>
+          </Link>
+          <Link href="/rsvp" onClick={toggleMenu}>
+            <button className="px-8 py-3 border-2 border-darkerBlue text-darkerBlue text-lg tracking-wide hover:bg-darkerBlue hover:text-white transition-all duration-300">
+              {t('Rsvp')}
+            </button>
+          </Link>
+          <LocaleSwitcher textColor="text-darkerBlue" />
         </div>
-      )}
+      </div>
     </div>
   );
 };

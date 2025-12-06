@@ -5,7 +5,7 @@
     "HomePage": {
         "subtitle": "Venez célébrer notre mariage",
         "date": "Le 26 septembre 2026",
-        "InvitationText": "Veuillez rejoindre Marie-Lie et Victor le 26 septembre 2026 pour célébrer notre mariage",
+        "InvitationText": "Veuillez nous rejoindre le 26 septembre 2026 pour célébrer notre mariage",
         "Place": "Lieu",
         "Ceremony": "Cérémonie",
         "Ceremony-time": "3:00 à 4:00 PM",
@@ -29,6 +29,7 @@
     "Navbar": {
         "Wedding": "Marriage",
         "Story": "Notre Histoire",
+        "Accommodations": "Hébergement",
         "Faq": "FAQ",
         "Rsvp": "RSVP",
         "Names": "Maire-Lie & Victor"
@@ -41,9 +42,9 @@
         "by": "par",
         "Contact": "Contact",
         "emailV": "levesque.vic@gmail.com",
-        "phoneV": "514-777-7777",
+        "phoneV": "514-781-0438",
         "emailM": "levesquemlie@gmail.com",
-        "phoneM": "514-777-7777"
+        "phoneM": "514-449-4799"
     },
     "FaqPage": {
         "title": "Foire aux questions"
@@ -102,37 +103,81 @@
         "submit": "Soumettre",
         "sending": "En Envoi...",
         "loading": "Chargement...",
-        "formReceived": "Formulaire envoyé ✓"
+        "formReceived": "Formulaire envoyé ✓",
+        "submitError": "Échec de l'envoi du formulaire. Veuillez réessayer.",
+        "networkError": "Erreur réseau. Veuillez vérifier votre connexion et réessayer."
     },
     "StoryPage": {
         "title": "Notre Histoire",
-        "subtitle": "Chaque histoire d'amour est belle, mais la nôtre est notre préférée. Voici comment notre aventure a commencé."
+        "subtitle": "Chaque histoire d'amour est belle, mais la nôtre c'est notre préférée. Voici comment notre aventure a commencé."
     },
     "StoryTimeline": {
         "Event1": {
-            "date": "Été 2015",
+            "date": "Automne 2018",
             "title": "Première Rencontre",
-            "description": "Nous nous sommes rencontrés pour la première fois lors d'une fête d'un ami commun. Nous ne savions pas que cette rencontre fortuite changerait nos vies pour toujours."
+            "description": "Nous nous sommes rencontrés pour la première fois au travail. Une amitié s'est rapidement développée, posant les bases de notre relation future."
         },
         "Event2": {
-            "date": "Décembre 2015",
-            "title": "Premier Rendez-vous",
-            "description": "Notre premier rendez-vous officiel était dans un café chaleureux du centre-ville. Nous avons parlé pendant des heures et nous savions qu'il y avait quelque chose de spécial entre nous."
+            "date": "Automne 2019",
+            "title": "Premiers Rendez-vous",
+            "description": "Nos premiers rendez-vous ont été en plein air, profitant de la beauté de la nature tout en apprenant à nous connaître."
         },
         "Event3": {
             "date": "Juin 2018",
-            "title": "Emménagement Ensemble",
-            "description": "Nous avons décidé de franchir la prochaine étape et d'emménager ensemble. Construire notre foyer ensemble nous a rapprochés encore plus."
+            "title": "Emménagement",
+            "description": "Nous avons décidé de franchir la prochaine étape et d'emménager ensemble à Verdun, découvrant le quartier et profitant de la vie urbaine."
         },
         "Event4": {
-            "date": "Août 2023",
-            "title": "La Demande",
-            "description": "Lors d'un voyage romantique dans les montagnes, Victor a fait sa demande. Bien sûr, Marie-Lie a dit oui!"
+            "date": "Année 2020",
+            "title": "Pandémie et Vie Ensemble",
+            "description": "La pandémie nous a poussés à passer plus de temps ensemble à la maison."
         },
         "Event5": {
+            "date": "Août 2023",
+            "title": "Déménagement en Australie",
+            "description": "Nous avons fait nos valises et déménagé en Australie pour une nouvelle aventure ensemble. C'était une expérience incroyable de découvrir un nouveau pays et de créer des souvenirs inoubliables."
+        },
+        "Event6": {
             "date": "Septembre 2026",
-            "title": "Notre Jour de Mariage",
-            "description": "Nous avons hâte de célébrer notre amour avec vous tous lors de notre journée spéciale!"
+            "title": "Demande en Mariage en Nouvelle-Zélande",
+            "description": "Lors d'un voyage en Nouvelle-Zélande, Victor a fait sa demande en mariage à Marie-Lie dans un cadre pittoresque"
+        },
+        "Event7": {
+            "date": "Printemps 2025",
+            "title": "Voyage à travers l'Asie",
+            "description": "Avant notre retour au Québec, nous avons exploré plusieurs pays en Asie, découvrant de nouvelles cultures et créant des souvenirs inoubliables ensemble."
+        },
+        "Event8": {
+            "date": "Printemps 2025",
+            "title": "Retour au Québec",
+            "description": "Après notre aventure en Australie et en Asie, nous sommes ravis de revenir au Québec pour être proches de vous et les préparatifs de notre mariage."
+        }
+    },
+    "AccommodationsPage": {
+        "title": "Hébergement",
+        "subtitle": "Voici quelques options d'hébergement à proximité du lieu de la cérémonie.",
+        "viewWebsite": "Voir le site web"
+    },
+    "Accommodations": {
+        "StoneHaven": {
+            "name": "StoneHaven",
+            "description": "Un refuge luxueux offrant des chambres élégantes avec des vues magnifiques et un service exceptionnel.",
+            "distance": "5 minutes du lieu"
+        },
+        "LeManoir": {
+            "name": "Le Manoir Relais",
+            "description": "Un manoir charmant combinant l'élégance historique avec le confort moderne.",
+            "distance": "10 minutes du lieu"
+        },
+        "Super8": {
+            "name": "Super 8",
+            "description": "Hébergement confortable et abordable avec toutes les commodités essentielles.",
+            "distance": "15 minutes du lieu"
+        },
+        "Watel": {
+            "name": "Hôtel Spa Watel",
+            "description": "Détendez-vous dans ce magnifique hôtel spa avec des installations de bien-être et un environnement paisible.",
+            "distance": "12 minutes du lieu"
         }
     }
 }

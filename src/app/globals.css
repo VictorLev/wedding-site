@@ -5,17 +5,19 @@
 @tailwind components;
 @tailwind utilities;
 
-
+/*1f497a*/
 :root {
   --background: #ffffff;
   --foreground: #171717;
   --white: #E8F0F8;
   --pale-blue: #E8F0F8;
   --light-blue: #CEE0F1;
+  --light-blue: #CEE0F1;
   --medium-blue: #A7C1D9;
   --blue: #84A1C4;
   --dark-blue: #60789B;
-  --darker-blue: #1f497a;
+  --darker-blue: #1f497a; 
+  
   --charcoal: #3F4955;
 }
 
@@ -45,13 +47,16 @@ h1 {
   left: 50%;
   width: 0;
   height: 2px;
-  background-color: var(--blue); /* the color of the line */
+  background-color: var(--darker-blue); /* the color of the line */
   transition: all 0.3s ease;
 }
 
-.link-container:hover::before,
-.link-container.active::before {
+.link-container:hover::before {
   width: 100%;
   left: 0;
+}
+
+.link-container.active {
+  font-weight: 700;
 }
 

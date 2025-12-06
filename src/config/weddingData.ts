@@ -4,6 +4,8 @@ import Ring from "@/public/images/ring.png";
 import Cake from "@/public/images/wedding-cake.png";
 import Gift from "@/public/images/gift.png";
 import bgHome from "@/public/images/home.jpg";
+import bgHome1 from "@/public/images/home-1.jpg";
+import bgHome2 from "@/public/images/home-2.jpg";
 
 export interface VenueInfo {
   name: string;
@@ -53,7 +55,7 @@ export const venue: VenueInfo = {
 
 export const homeSection = {
   id: "home",
-  backgroundImage: bgHome
+  backgroundImages: [bgHome, bgHome1, bgHome2]
 };
 
 export const eventSections: EventSection[] = [

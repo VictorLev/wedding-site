@@ -3,7 +3,7 @@
 import { useState , useEffect } from 'react';
 import Image from 'next/image';
 import { useTranslations, useMessages } from 'next-intl';
-import Lake from '@/public/images/lake.jpg';
+import Faqbg from '@/public/images/faqbg.jpg';
 import Container from '@/components/ui/Container';
 import Loading from '@/components/ui/Loading';
 import { Plus } from 'lucide-react';
@@ -41,23 +41,23 @@ export default function Faq() {
   return (
     <div className='relative bg-lightBlue'>
       {/* Faq Background */}
-      <div className="absolute top-0 h-[75vh] w-full overflow-hidden">
+      <div className="absolute top-0 h-[50vh] w-full overflow-hidden">
         <div className='relative h-full w-full'>
           <Image 
             priority
-            src={Lake} 
-            alt="Lake Background" 
+            src={Faqbg} 
+            alt="FAQ Background" 
             className="object-cover object-[50% 50%] w-full h-full opacity-0 animate-fadeIn" 
           />
           <div className="absolute bottom-0 h-4 sm:h-[10vh] w-full bg-gradient-to-b from-transparent to-lightBlue"></div>
         </div>
       </div>
       {/* Banner */}
-      <div className="relative h-[75vh] w-full ">
+      <div className="relative h-[50vh] w-full ">
         <div className="flex flex-col justify-center items-center h-full">
-          <p className="text-5xl text-darkerBlue drop-shadow-lg font-light tracking-widest pt-2 text-center">
+          <h1 className="text-7xl text-white drop-shadow-lg font-light tracking-widest pt-2 text-center">
             {f('title')}
-          </p>
+          </h1>
         </div>
       </div>
 

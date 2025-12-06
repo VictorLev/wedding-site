@@ -5,13 +5,13 @@
     "HomePage": {
         "subtitle": "Come celebrate our wedding",
         "date": "September 26, 2026",
-        "InvitationText": "Please join Marie-Lie and Victor on September 26, 2026 as we celebrate our wedding",
+        "InvitationText": "Please join us on September 26, 2026 as we celebrate our wedding",
         "Place": "Venue",
         "Ceremony": "Ceremony",
-        "Ceremony-time": "5:00 to 5:30 PM",
+        "Ceremony-time": "3:00 to 4:00 PM",
         "Ceremony-description": "The ceremony will take place at the beautiful Davis Manor. Join us to celebrate this special moment.",
         "Cocktail": "Cocktail",
-        "Cocktail-time": "5:30 to 6:00 PM",
+        "Cocktail-time": "4:00 to 6:00 PM",
         "Cocktail-description": "Enjoy an elegant cocktail with delicious drinks and appetizers.",
         "Reception": "Reception",
         "Reception-time": "6:00 to 11:00 PM",
@@ -29,6 +29,7 @@
     "Navbar": {
         "Wedding": "Wedding",
         "Story": "Our Story",
+        "Accommodations": "Accommodations",
         "Faq": "FAQ",
         "Rsvp": "RSVP",
         "Names": "Maire-Lie & Victor"
@@ -41,9 +42,9 @@
         "by": "by",
         "Contact": "Contact",
         "emailV": "levesque.vic@gmail.com",
-        "phoneV": "514-777-7777",
+        "phoneV": "514-781-0438",
         "emailM": "levesquemlie@gmail.com",
-        "phoneM": "514-777-7777"
+        "phoneM": "514-449-4799"
     },
     "FaqPage": {
         "title": "Frequently Asked Questions"
@@ -101,7 +102,9 @@
         "submit": "Submit",
         "sending": "Sending...",
         "loading": "Loading...",
-        "formReceived": "Form sent ✓"
+        "formReceived": "Form sent ✓",
+        "submitError": "Failed to submit the form. Please try again.",
+        "networkError": "Network error. Please check your connection and try again."
     },
     "StoryPage": {
         "title": "Our Story",
@@ -109,29 +112,72 @@
     },
     "StoryTimeline": {
         "Event1": {
-            "date": "Summer 2015",
-            "title": "First Meeting",
-            "description": "We first met at a mutual friend's party. Little did we know, this chance encounter would change our lives forever."
+            "date": "Fall 2018",
+            "title": "First time meeting",
+            "description": "We first met at work. A friendship quickly developed, laying the foundation for our future relationship."
         },
         "Event2": {
-            "date": "December 2015",
-            "title": "First Date",
-            "description": "Our first official date was at a cozy coffee shop downtown. We talked for hours and knew there was something special between us."
+            "date": "Fall 2019",
+            "title": "First Dates",
+            "description": "Our first dates were outdoors, enjoying the beauty of nature while getting to know each other."
         },
         "Event3": {
             "date": "June 2018",
-            "title": "Moving In Together",
-            "description": "We decided to take the next step and move in together. Building our home together brought us even closer."
+            "title": "Moving In",
+            "description": "We decided to take the next step and move in together in Verdun, exploring the neighborhood and enjoying urban life."
         },
         "Event4": {
-            "date": "August 2023",
-            "title": "The Proposal",
-            "description": "During a romantic trip to the mountains, Victor proposed. Of course, Marie-Lie said yes!"
+            "date": "Year 2020",
+            "title": "Pandemic and Life Together",
+            "description": "The pandemic pushed us to spend more time together at home."
         },
         "Event5": {
+            "date": "August 2023",
+            "title": "Moving to Australia",
+            "description": "We packed our bags and moved to Australia for a new adventure together. It was an incredible experience discovering a new country and creating unforgettable memories."
+        },
+        "Event6": {
             "date": "September 2026",
-            "title": "Our Wedding Day",
-            "description": "We can't wait to celebrate our love with all of you on our special day!"
+            "title": "Marriage Proposal in New Zealand",
+            "description": "During a trip to New Zealand, Victor proposed to Marie-Lie in a picturesque setting."
+        },
+        "Event7": {
+            "date": "Spring 2025",
+            "title": "Journey Through Asia",
+            "description": "Before returning to Quebec, we explored several countries in Asia, discovering new cultures and creating unforgettable memories together."
+        },
+        "Event8": {
+            "date": "Spring 2025",
+            "title": "Return to Quebec",
+            "description": "After our adventure in Australia and Asia, we are excited to return to Quebec to be close to you and prepare for our wedding."
+        }
+    },
+    "AccommodationsPage": {
+        "title": "Accommodations",
+        "subtitle": "We have reserved rooms at these wonderful accommodations near the venue for your convenience.",
+        "viewWebsite": "View Website",
+        "bookNow": "Book Now"
+    },
+    "Accommodations": {
+        "StoneHaven": {
+            "name": "StoneHaven",
+            "description": "A luxurious retreat offering elegant rooms with stunning views and exceptional service.",
+            "distance": "5 minutes from venue"
+        },
+        "LeManoir": {
+            "name": "Le Manoir Relais",
+            "description": "A charming manor house combining historic elegance with modern comfort.",
+            "distance": "10 minutes from venue"
+        },
+        "Super8": {
+            "name": "Super 8",
+            "description": "Comfortable and affordable accommodations with all the essential amenities.",
+            "distance": "15 minutes from venue"
+        },
+        "Watel": {
+            "name": "Hôtel Spa Watel",
+            "description": "Relax and unwind at this beautiful spa hotel featuring wellness facilities and peaceful surroundings.",
+            "distance": "12 minutes from venue"
         }
     }
 }

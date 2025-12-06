@@ -18,6 +18,7 @@ import {
 export default function Home() {
   const t = useTranslations('HomePage');
   const [isVisible, setIsVisible] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -26,26 +27,44 @@ export default function Home() {
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) =>
+        (prevIndex + 1) % homeSection.backgroundImages.length
+      );
+    }, 5000); // Change image every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="overflow-hidden bg-lightBlue">
       {/* Home */}
       <section id={homeSection.id} className="relative">
-        {/* Home Background with Kenburns Effect */}
-        <div className="absolute top-0 h-screen w-full overflow-hidden">
-          <div className="w-full h-full relative">
-            <Image
-              priority
-              src={homeSection.backgroundImage}
-              alt="Home Background"
-              className="object-cover w-full h-full animate-kenburns"
-              fill
-              style={{ objectPosition: '50% 50%' }}
-            />
-          </div>
+        {/* Home Background Slideshow with Kenburns Effect */}
+        <div className="absolute top-0 h-[110vh] w-full overflow-hidden">
+          {homeSection.backgroundImages.map((image, index) => (
+            <div
+              key={index}
+              className={`w-full h-full absolute inset-0 transition-opacity duration-1000 ${
+                index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+              }`}
+            >
+              <Image
+                priority={index === 0}
+                src={image}
+                alt={`Home Background ${index + 1}`}
+                className="object-cover w-full h-full animate-kenburns"
+                fill
+                style={{ objectPosition: '50% 50%' }}
+              />
+            </div>
+          ))}
           {/* Subtle overlay */}
           <div className="absolute inset-0 bg-black/5"></div>
           {/* Top gradient for navbar visibility */}
           <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black/30 to-transparent"></div>
+          <div className={`absolute bottom-0 left-0 right-0 h-[10vh] bg-gradient-to-b from-transparent to-lightBlue`}></div>
         </div>
 
         {/* Hero Content - Centered */}
@@ -69,10 +88,13 @@ export default function Home() {
             </Link>
           </div>
         </div>
+
+        {/* Bottom gradient for fade to next section - Outside h-screen */}
+        
       </section>
 
       {/* Invitation Text */}
-      <div className="bg-lightBlue pt-12 pb-8 px-4">
+      <div className="bg-lightBlue pt-48 pb-8 px-4">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-xl md:text-3xl text-darkerBlue font-light leading-relaxed tracking-wide">
             {t('InvitationText')}
