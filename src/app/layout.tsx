@@ -1,10 +1,23 @@
 import type { Metadata } from "next";
+import { Fraunces, Imperial_Script } from 'next/font/google';
 import "./globals.css";
 import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
 import {NextIntlClientProvider} from 'next-intl';
 import {getLocale, getMessages} from 'next-intl/server';
 
+const fraunces = Fraunces({
+  subsets: ['latin'],
+  variable: '--font-fraunces',
+  display: 'swap',
+});
+
+const imperialScript = Imperial_Script({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-imperial-script',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: "Mariage de Marie-Lie & Victor",
@@ -23,8 +36,8 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale}>
-      <body>
+    <html lang={locale} className={`${fraunces.variable} ${imperialScript.variable}`}>
+      <body className={fraunces.className}>
         <NextIntlClientProvider messages={messages}>
           <Navbar />
           {children}

@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Imperial+Script&display=swap');
 @import "@radix-ui/themes/styles.css";
 
 @tailwind base;
@@ -16,8 +15,8 @@
   --medium-blue: #A7C1D9;
   --blue: #84A1C4;
   --dark-blue: #60789B;
-  --darker-blue: #1f497a; 
-  
+  --darker-blue: #1f497a;
+
   --charcoal: #3F4955;
 }
 
@@ -28,11 +27,11 @@ html {
 body {
   color: var(--darker-blue);
   background: var(--background);
-  font-family: 'Fraunces', serif;
+  font-family: var(--font-fraunces), serif;
 }
 
 h1 {
-  font-family: 'Imperial Script', cursive;
+  font-family: var(--font-imperial-script), cursive;
 }
 
 .link-container {

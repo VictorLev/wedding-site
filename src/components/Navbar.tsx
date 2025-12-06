@@ -18,7 +18,6 @@ export default function Navbar() {
   const isStoryPage = pathname?.includes('/story');
   const isAccommodationsPage = pathname?.includes('/accommodations');
 
-  const [activeSection, setActiveSection] = useState('');
   const [isNavbarVisible, setIsNavbarVisible] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isOnHomeSection, setIsOnHomeSection] = useState(true);
@@ -81,29 +80,6 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isHomePage, lastScrollY]);
 
-  // Intersection Observer for active section tracking
-  useEffect(() => {
-    setActiveSection(''); // Reset on route change
-    if (!isHomePage) return;
-
-    const sections = document.querySelectorAll('section');
-    if (!sections.length) return;
-
-    const observerRef = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      { threshold: 0, rootMargin: '-40% 0px -60% 0px' }
-    );
-
-    sections.forEach((section) => observerRef.observe(section));
-
-    return () => observerRef.disconnect();
-  }, [pathname, isHomePage]);
 
   // Handle smooth scrolling on page load
   useEffect(() => {
