@@ -1,11 +1,12 @@
 import { StaticImageData } from 'next/image';
 import Manoir from "@/public/images/manoir.png";
 import Ring from "@/public/images/ring.png";
-import Cake from "@/public/images/wedding-cake.png";
-import Gift from "@/public/images/gift.png";
+import Cake from "@/public/images/wedding-cake-svgrepo-com.svg";
+import Cocktail from "@/public/images/stemware-svgrepo-com.svg";
 import bgHome from "@/public/images/home.jpg";
 import bgHome1 from "@/public/images/home-1.jpg";
 import bgHome2 from "@/public/images/home-2.jpg";
+import bgHome3 from "@/public/images/home-3.jpg";
 
 export interface VenueInfo {
   name: string;
@@ -55,7 +56,7 @@ export const venue: VenueInfo = {
 
 export const homeSection = {
   id: "home",
-  backgroundImages: [bgHome, bgHome1, bgHome2]
+  backgroundImages: [bgHome, bgHome1, bgHome2, bgHome3]
 };
 
 export const eventSections: EventSection[] = [
@@ -73,7 +74,7 @@ export const eventSections: EventSection[] = [
     titleKey: "Cocktail",
     timeKey: "Cocktail-time",
     descriptionKey: "Cocktail-description",
-    icon: Gift,
+    icon: Cocktail,
     iconAlt: "Cocktail drinks",
     bgColor: "bg-lightBlue"
   },

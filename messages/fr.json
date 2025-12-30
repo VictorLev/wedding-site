@@ -61,19 +61,31 @@
         },
         "Q3": {
             "question": "Puis-je amener mes enfants?",
-            "answer": "Nous adorons les enfants! Veuillez nous informer si vous amenez vos enfants en remplissant le formulaire RSVP."
+            "answer": "Nous aimons les enfants, mais pour cette occasion spéciale, nous demandons que seuls les adultes assistent à la cérémonie et à la réception. Nous espérons que vous comprenez."
         },
         "Q4": {
             "question": "Quelle est la situation du stationnement?",
-            "answer": "Il y a beaucoup de places de stationnement disponibles sur le site. Veuillez nous informer si vous avez besoin d'accommodements spéciaux."
+            "answer": "Il y a beaucoup de places de stationnement disponibles sur le site. De plus, un navette sera disponible pour transporter les invités depuis les hôtels jusqu'au mariage et pour vous reconduire en fin de soirée."
         },
         "Q5": {
             "question": "Quelle est la politique de cadeaux?",
-            "answer": "Votre présence est le meilleur cadeau que nous pourrions demander. Si vous souhaitez nous offrir quelque chose, nous avons une liste de mariage chez Amazon et Bed Bath & Beyond."
+            "answer": "Votre présence est le meilleur cadeau que nous pourrions demander. Cependant, si vous souhaitez nous offrir quelque chose, une contribution monétaire sera grandement appréciée."
         },
         "Q6": {
             "question": "Puis-je prendre des photos?",
-            "answer": "Nous aimerions que vous preniez des photos et que vous les partagiez avec nous. Veuillez utiliser le hashtag #MaireLieAndVictorWedding pour partager vos souvenirs avec nous."
+            "answer": "Une photographe professionnelle sera présente pour capturer chaque moment spécial. Nous vous demandons de profiter de la cérémonie sans vous soucier de prendre des photos. Après la cérémonie, nous serons ravis de voir vos photos et vidéos!"
+        },
+        "Q7": {
+            "question": "Y a-t-il des restrictions alimentaires?",
+            "answer": "Nous avons pris en compte diverses restrictions alimentaires. Veuillez nous informer de toute restriction spécifique lors de la confirmation de votre présence."
+        },
+        "Q8": {
+            "question": "Y a-t-il un hébergement à proximité?",
+            "answer": "Oui, il y a plusieurs options d'hébergement à proximité du lieu de la cérémonie. Veuillez consulter notre page d'hébergement pour plus de détails et des recommandations."
+        },
+        "Q9": {
+            "question": "Y a-t-il un navette de disponible?",
+            "answer": "Oui, un navette sera disponible pour transporter les invités depuis les hôtels jusqu'au mariage et pour vous reconduire en fin de soirée."
         }
     },
     "RsvpPage": {
@@ -97,7 +109,7 @@
         "arrivalDate": "Date d'arrivée",
         "departureDate": "Date de départ",
         "dietaryRestrictions": "Restrictions alimentaires",
-        "favoriteSong": "Quelle est votre chanson préférée?",
+        "favoriteSong": "Quelle est votre chason préférée pour vous déhancher?",
         "comments": "Commentaires",
         "leaveComment": "Laissez nous un commentaire...",
         "submit": "Soumettre",
@@ -123,34 +135,34 @@
             "description": "Nos premiers rendez-vous ont été en plein air, profitant de la beauté de la nature tout en apprenant à nous connaître."
         },
         "Event3": {
-            "date": "Juin 2018",
+            "date": "Décembre 2020",
             "title": "Emménagement",
             "description": "Nous avons décidé de franchir la prochaine étape et d'emménager ensemble à Verdun, découvrant le quartier et profitant de la vie urbaine."
         },
         "Event4": {
-            "date": "Année 2020",
+            "date": "2020-2022",
             "title": "Pandémie et Vie Ensemble",
             "description": "La pandémie nous a poussés à passer plus de temps ensemble à la maison."
         },
         "Event5": {
-            "date": "Août 2023",
+            "date": "Novembre 2022",
             "title": "Déménagement en Australie",
             "description": "Nous avons fait nos valises et déménagé en Australie pour une nouvelle aventure ensemble. C'était une expérience incroyable de découvrir un nouveau pays et de créer des souvenirs inoubliables."
         },
         "Event6": {
-            "date": "Septembre 2026",
+            "date": "Décembre 2024",
             "title": "Demande en Mariage en Nouvelle-Zélande",
             "description": "Lors d'un voyage en Nouvelle-Zélande, Victor a fait sa demande en mariage à Marie-Lie dans un cadre pittoresque"
         },
         "Event7": {
-            "date": "Printemps 2025",
+            "date": "Mars 2025",
             "title": "Voyage à travers l'Asie",
-            "description": "Avant notre retour au Québec, nous avons exploré plusieurs pays en Asie, découvrant de nouvelles cultures et créant des souvenirs inoubliables ensemble."
+            "description": "Avant notre retour au Québec, nous avons exploré plusieurs pays en Asie, découvrant de nouvelles cultures et créant des souvenirs mémorables ensemble."
         },
         "Event8": {
-            "date": "Printemps 2025",
+            "date": "Juillet 2025",
             "title": "Retour au Québec",
-            "description": "Après notre aventure en Australie et en Asie, nous sommes ravis de revenir au Québec pour être proches de vous et les préparatifs de notre mariage."
+            "description": "Après notre aventure en Australie et en Asie, nous sommes ravis de revenir au Québec parmis nos proches et entamer les préparatifs de notre mariage."
         }
     },
     "AccommodationsPage": {

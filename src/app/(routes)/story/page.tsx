@@ -7,6 +7,11 @@ import Lake from '@/public/images/lake.jpg';
 import Story1 from '@/public/images/story-1.jpg';
 import Story2 from '@/public/images/story-2.jpg';
 import Story3 from '@/public/images/story-3.jpg';
+import Story4 from '@/public/images/story-4.jpg';
+import Story5 from '@/public/images/story-5.jpg';
+import Story6 from '@/public/images/story-6.jpg';
+import Story7 from '@/public/images/story-7.jpg';
+import Story8 from '@/public/images/story-8.jpg';
 import Container from '@/components/ui/Container';
 import Loading from '@/components/ui/Loading';
 import { Heart } from 'lucide-react';
@@ -33,7 +38,7 @@ export default function Story() {
     return <Loading />;
   }
 
-  const timelineImages = [Story1, Story2, Story3];
+  const timelineImages = [Story1, Story2, Story3, Story4, Story5, Story6, Story7, Story8];
 
   const timelineKeys = Object.keys(messages.StoryTimeline || {});
   const timelineEvents: TimelineEvent[] = timelineKeys.map((key) => ({
@@ -56,6 +61,8 @@ export default function Story() {
           <div className="absolute bottom-0 h-4 sm:h-[5vh] w-full bg-gradient-to-b from-transparent to-lightBlue"></div>
         </div>
       </div>
+
+
 
       {/* Banner */}
       <div className="relative h-[50vh] w-full">
