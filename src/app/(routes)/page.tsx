@@ -52,10 +52,13 @@ export default function Home() {
             >
               <Image
                 priority={index === 0}
+                loading={index === 0 ? 'eager' : 'lazy'}
                 src={image}
                 alt={`Home Background ${index + 1}`}
-                className="object-cover w-full h-full animate-kenburns"
                 fill
+                sizes="100vw"
+                quality={85}
+                className="object-cover animate-kenburns"
                 style={{ objectPosition: '50% 50%' }}
               />
             </div>

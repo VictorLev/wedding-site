@@ -43,11 +43,14 @@ export default function Faq() {
       {/* Faq Background */}
       <div className="absolute top-0 h-[50vh] w-full overflow-hidden">
         <div className='relative h-full w-full'>
-          <Image 
+          <Image
             priority
-            src={Faqbg} 
-            alt="FAQ Background" 
-            className="object-cover object-[50% 50%] w-full h-full opacity-0 animate-fadeIn" 
+            src={Faqbg}
+            alt="FAQ Background"
+            fill
+            sizes="100vw"
+            quality={85}
+            className="object-cover object-[50% 50%] opacity-0 animate-fadeIn"
           />
           <div className="absolute bottom-0 h-4 sm:h-[10vh] w-full bg-gradient-to-b from-transparent to-lightBlue"></div>
         </div>

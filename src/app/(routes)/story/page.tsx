@@ -56,7 +56,10 @@ export default function Story() {
             priority
             src={Lake}
             alt="Lake Background"
-            className="object-cover object-[50% 50%] w-full h-full opacity-0 animate-fadeIn"
+            fill
+            sizes="100vw"
+            quality={85}
+            className="object-cover object-[50% 50%] opacity-0 animate-fadeIn"
           />
           <div className="absolute bottom-0 h-4 sm:h-[5vh] w-full bg-gradient-to-b from-transparent to-lightBlue"></div>
         </div>
@@ -100,6 +103,9 @@ export default function Story() {
                           src={timelineImages[index]}
                           alt={`${event.title} - ${event.date}`}
                           fill
+                          loading={index === 0 ? 'eager' : 'lazy'}
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                          quality={85}
                           className="object-cover"
                         />
                       </div>
