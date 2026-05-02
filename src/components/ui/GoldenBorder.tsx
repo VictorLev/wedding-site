@@ -30,8 +30,7 @@ const GoldenBorder: React.FC<GoldenBorderProps> = ({ children, title, bg_color }
         {/* Bottom Logo */}
         <div className={`absolute -bottom-8 left-1/2 -translate-x-1/2 ${bg_color} px-6`}>
           <Image
-            className="object-contain brightness-0 saturate-100"
-            style={{ filter: 'invert(20%) sepia(35%) saturate(2000%) hue-rotate(190deg) brightness(90%) contrast(95%)' }}
+            style={{ filter: 'brightness(0) saturate(100%) invert(82%) sepia(23%) saturate(300%) hue-rotate(170deg) brightness(89%) contrast(90%)' }}
             width={50}
             priority
             src={Logo}

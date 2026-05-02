@@ -4,6 +4,7 @@
     },
     "HomePage": {
         "subtitle": "Come celebrate our wedding",
+        "Wedding": "Wedding of",
         "date": "September 26, 2026",
         "InvitationText": "Please join us on September 26, 2026 as we celebrate our wedding",
         "Place": "Venue",
@@ -19,6 +20,7 @@
         "Accommodations": "Accommodations",
         "Gifts": "Gifts",
         "RSVP": "Confirm your attendance",
+        "Countdown": "days until the big day",
         "SweetMessage": "Thank you for being with us for this beautiful event. Your love and support mean a lot to us, and we look forward to celebrating this moment with you.",
         "Names": "Maire-Lie & Victor",
         "Lorem Ipsum": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in sapien eget nisl euismod accumsan. Maecenas accumsan pulvinar arcu, eu aliquet urna congue et. Curabitur vulputate neque in arcu eleifend, quis eleifend mauris consectetur. Sed at dolor augue. Aliquam vestibulum et enim sit amet volutpat. Duis dignissim ex ipsum, a tincidunt tellus porta vel. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed quam pulvinar, mollis tortor quis, placerat tortor. Suspendisse commodo, nisi at gravida aliquet, ligula risus pellentesque nulla, sed cursus sapien nisi sit amet quam. Pellentesque eget nisi id tortor luctus aliquet eu ac libero."
@@ -156,28 +158,29 @@
         "title": "Accommodations",
         "subtitle": "We have reserved rooms at these wonderful accommodations near the venue for your convenience.",
         "viewWebsite": "View Website",
-        "bookNow": "Book Now"
+        "bookNow": "Book Now",
+        "venue": "Venue"
     },
     "Accommodations": {
         "StoneHaven": {
             "name": "StoneHaven",
             "description": "A luxurious retreat offering elegant rooms with stunning views and exceptional service.",
-            "distance": "5 minutes from venue"
+            "distance": "3 minutes from venue"
         },
-        "LeManoir": {
-            "name": "Le Manoir Relais",
-            "description": "A charming manor house combining historic elegance with modern comfort.",
+        "ClairMont": {
+            "name": "Motel Clair-Mont",
+            "description": "Comfortable and affordable accommodations with all the essential amenities.",
             "distance": "10 minutes from venue"
         },
         "Super8": {
             "name": "Super 8",
             "description": "Comfortable and affordable accommodations with all the essential amenities.",
-            "distance": "15 minutes from venue"
+            "distance": "10 minutes from venue"
         },
         "Watel": {
             "name": "Hôtel Spa Watel",
-            "description": "Relax and unwind at this beautiful spa hotel featuring wellness facilities and peaceful surroundings.",
-            "distance": "12 minutes from venue"
+            "description": "Beautiful spa hotel featuring wellness facilities and peaceful surroundings.",
+            "distance": "5 minutes from venue"
         }
     }
 }

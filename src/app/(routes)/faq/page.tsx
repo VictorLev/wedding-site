@@ -20,6 +20,8 @@ export default function Faq() {
 
   useEffect(() => {
     if (messages.FaqQuestions) {
+      const keys = Object.keys(messages.FaqQuestions);
+      setOpenIndexes(keys.map((_, i) => i));
       setLoading(false);
     }
   }, [messages]);
@@ -66,14 +68,14 @@ export default function Faq() {
 
       <Container>
         {/* FAQ Section */}
-        <div className="bg-lightBlue p-4 sm:px-0 sm:py-10 text-left sm:w-3/4">
+        <div className="p-4 sm:px-0 sm:py-10 text-left sm:w-3/4 flex flex-col gap-4">
           {keys.map((key: string, index: number) => (
-            <div key={index} className="border-b border-lightBlue py-4">
+            <div key={index} className="bg-white rounded-lg shadow p-5">
               <button
                 onClick={() => toggleFAQ(index)}
                 className="flex items-center text-lg font-semibold w-full text-left"
               >
-                <span className="flex flex-row mr-2 px-1 text-xl">{openIndexes.includes(index) ? <Minus/> : <Plus/>}</span>
+                <span className="flex flex-row mr-3 text-xl text-darkerBlue">{openIndexes.includes(index) ? <Minus/> : <Plus/>}</span>
                 <p>{t(`${key}.question`)}</p>
               </button>
               <div
@@ -81,7 +83,7 @@ export default function Faq() {
                   openIndexes.includes(index) ? 'max-h-screen' : 'max-h-0'
                 }`}
               >
-                <p className="px-4 mt-2 text-darkerBlue">{t(`${key}.answer`)}</p>
+                <p className="pl-9 mt-3 text-darkerBlue">{t(`${key}.answer`)}</p>
               </div>
             </div>
           ))}

@@ -97,7 +97,7 @@ export default function Rsvp() {
       </div>
 
       <Container>
-        <div className="py-10 px-4">
+        <div className="py-10 px-10 w-full">
           {isSubmitted ? (
             <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-8 text-center">
               <div className="mb-4">
@@ -109,7 +109,7 @@ export default function Rsvp() {
               <p className="text-darkerBlue">We look forward to celebrating with you!</p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-8 space-y-6 mb-20">
+            <form onSubmit={handleSubmit} className="max-w-5xl w-full mx-auto bg-white rounded-lg shadow-lg p-8 space-y-6 mb-20">
               {error && (
                 <div className="bg-red-50 border-l-4 border-red-400 p-4 rounded" role="alert">
                   <div className="flex items-center">

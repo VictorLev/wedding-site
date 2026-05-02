@@ -19,6 +19,7 @@ export default function Home() {
   const t = useTranslations('HomePage');
   const [isVisible, setIsVisible] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [daysLeft, setDaysLeft] = useState<number | null>(null);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -34,6 +35,18 @@ export default function Home() {
       );
     }, 5000); // Change image every 5 seconds
 
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const weddingDate = new Date('2026-09-26');
+    const updateCountdown = () => {
+      const now = new Date();
+      const diff = Math.ceil((weddingDate.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
+      setDaysLeft(diff);
+    };
+    updateCountdown();
+    const interval = setInterval(updateCountdown, 60000);
     return () => clearInterval(interval);
   }, []);
 
@@ -64,7 +77,7 @@ export default function Home() {
             </div>
           ))}
           {/* Subtle overlay */}
-          <div className="absolute inset-0 bg-black/5"></div>
+          <div className="absolute inset-0 bg-black/40"></div>
           {/* Top gradient for navbar visibility */}
           <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black/30 to-transparent"></div>
           <div className={`absolute bottom-0 left-0 right-0 h-[10vh] bg-gradient-to-b from-transparent to-lightBlue`}></div>
@@ -72,8 +85,13 @@ export default function Home() {
 
         {/* Hero Content - Centered */}
         <div className="relative h-screen w-full flex flex-col justify-center items-center">
+
           <div className={`flex flex-col items-center duration-[1500ms] transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+            
             {/* Large Centered Names */}
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white font-light tracking-wide text-center px-4">
+              {t('Wedding')}
+            </h1>
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white font-light tracking-wide text-center mb-8 px-4">
               {t('Names')}
             </h1>
@@ -85,7 +103,7 @@ export default function Home() {
 
             {/* RSVP Button */}
             <Link href="/rsvp">
-              <button className="px-8 py-3 border-2 border-white text-white text-sm tracking-widest hover:bg-white hover:text-darkerBlue transition-all duration-300">
+              <button className="px-8 md:px-16 py-8 border-2 border-white text-white sm:text-base md:text-2xl tracking-widest hover:bg-white hover:text-darkerBlue transition-all duration-300">
                 {t('RSVP')}
               </button>
             </Link>
@@ -143,6 +161,16 @@ export default function Home() {
           </div>
         </GoldenBorder>
       </Section>
+
+      {/* Countdown */}
+      {daysLeft !== null && (
+        <div className="bg-lightBlue py-8 text-center">
+          <p className="text-6xl md:text-8xl font-light text-darkerBlue">{daysLeft}</p>
+          <p className="text-lg md:text-xl text-darkerBlue tracking-widest mt-4">
+            {t('Countdown')}
+          </p>
+        </div>
+      )}
 
       {/* Ceremony */}
       <Section>
