@@ -17,8 +17,8 @@ const EventSection: React.FC<EventSectionProps> = ({ section, reverse = false })
           <Image
             src={section.icon}
             alt={section.iconAlt}
-            width={ 200}
-            height={ 200}
+            width={150}
+            height={150}
             className="object-cover object-center"
             priority
           />
