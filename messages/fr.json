@@ -13,10 +13,10 @@
         "Ceremony-description": "La cérémonie aura lieu dans le magnifique Manoir Davis. Rejoignez-nous pour célébrer ce moment spécial.",
         "Cocktail": "Cocktail",
         "Cocktail-time": "4:00 à 6:00 PM",
-        "Cocktail-description": "Profitez d'un cocktail élégant avec des boissons et des amuse-gueules délicieux.",
+        "Cocktail-description": "Profitez d'un cocktail élégant avec des boissons et des amuse-gueules délicieux avec vu sur lac.",
         "Reception": "Réception",
         "Reception-time": "6:00 à 11:00 PM",
-        "Reception-description": "Rejoignez-nous pour une soirée de danse, de dîner et de célébration.",
+        "Reception-description": "Soirée de danse, de dîner et de célébration avec DJ et animation.",
         "Accommodations": "Hébergement",
         "Gifts": "Cadeaux",
         "RSVP": "Confirmer votre présence",
@@ -55,7 +55,7 @@
     "FaqQuestions": {
         "Q1": {
             "question": "Quel est le code vestimentaire?",
-            "answer": "Le code vestimentaire est semi-formel. Nous voulons que vous vous sentiez à l'aise et que vous profitiez de la journée avec nous. Veuillez porter quelque chose qui vous fait vous sentir bien."
+            "answer": "Le code vestimentaire est semi-formel. Nous voulons que vous vous sentiez à l'aise et que vous profitiez de la journée avec nous."
         },
         "Q2": {
             "question": "Puis-je amener un invité?",
@@ -67,7 +67,7 @@
         },
         "Q4": {
             "question": "Quelle est la situation du stationnement?",
-            "answer": "Il y a beaucoup de places de stationnement disponibles sur le site. De plus, un navette sera disponible pour transporter les invités depuis les hôtels jusqu'au mariage et pour vous reconduire en fin de soirée."
+            "answer": "Il y a du stationnement de disponibles sur le site. Par contre, un navette sera disponible pour transporter les invités depuis les hôtels jusqu'au mariage et pour les reconduire en fin de soirée."
         },
         "Q5": {
             "question": "Quelle est la politique de cadeaux?",
@@ -78,8 +78,8 @@
             "answer": "Une photographe professionnelle sera présente pour capturer chaque moment spécial. Nous vous demandons de profiter de la cérémonie sans vous soucier de prendre des photos. Après la cérémonie, nous serons ravis de voir vos photos et vidéos!"
         },
         "Q7": {
-            "question": "Y a-t-il des restrictions alimentaires?",
-            "answer": "Nous avons pris en compte diverses restrictions alimentaires. Veuillez nous informer de toute restriction spécifique lors de la confirmation de votre présence."
+            "question": "Que faire si j'ai des restrictions alimentaires?",
+            "answer": "Veuillez nous informer de toutes restrictions alimentaires en remplissant le formulaire RSVP."
         },
         "Q8": {
             "question": "Y a-t-il un hébergement à proximité?",
@@ -87,7 +87,7 @@
         },
         "Q9": {
             "question": "Y a-t-il un navette de disponible?",
-            "answer": "Oui, un navette sera disponible pour transporter les invités depuis les hôtels jusqu'au mariage et pour vous reconduire en fin de soirée. Veuillez nous informer si vous prévoyez d'utiliser le service de navette lors de la confirmation de votre présence - RSPV."
+            "answer": "Oui, un navette sera disponible pour transporter les invités depuis les hôtels jusqu'au mariage et pour les reconduire en fin de soirée. La navette est gratuite, mais nous vous demandons de nous informer à l'avance si vous prévoyez de l'utiliser en remplissant le formulaire RSVP."
         }
     },
     "RsvpPage": {
@@ -101,16 +101,15 @@
         "saturdayCocktail" : "Cocktail du samedi - 1PM",
         "sundayBrunch" : "Brunch du dimanche - 10AM",
         "numberOfAdults": "Nombre d'adultes",
-        "namePlusOne": "Nom de votre invité",
+        "namePlusOne": "Nom de votre invité.e",
         "numberOfChildren": "Nombre d'enfants",
-        "stayingOnsite": "Restez-vous sur place? Si oui, à quelle hébergement",
+        "stayingOnsite": "Prévoyez-vous utiliser le service de navette pour aller et revenir à votre hébergement?",
         "select": "Sélectionner",
         "yes": "Oui",
         "no": "Non",
-        "accommodations": "Hébergement",
-        "arrivalDate": "Date d'arrivée",
+        "accommodations": "Veuillez préciser le nom ou address de votre hébergement",
         "departureDate": "Date de départ",
-        "dietaryRestrictions": "Restrictions alimentaires",
+        "dietaryRestrictions": "Avez-vous des restrictions alimentaires?",
         "favoriteSong": "Quelle est votre chason préférée pour vous déhancher?",
         "comments": "Commentaires",
         "leaveComment": "Laissez nous un commentaire...",
@@ -169,30 +168,30 @@
     },
     "AccommodationsPage": {
         "title": "Hébergement",
-        "subtitle": "Voici quelques options d'hébergement à proximité du lieu de la cérémonie. Un navette ira vous chercher et vous reconduire à votre hébergement.",
+        "subtitle": "Voici quelques options d'hébergement à proximité du lieu de la cérémonie. Une navette est disponible pour revenir vous chercher et vous reconduire à votre hébergement, le service de navette ne se limite pas aux suggestions ci-dessous.",
         "viewWebsite": "Voir le site web",
         "venue": "Lieu"
     },
     "Accommodations": {
-        "StoneHaven": {
-            "name": "StoneHaven",
-            "description": "Un refuge luxueux offrant des chambres élégantes avec des vues magnifiques et un service exceptionnel.",
-            "distance": "3 minutes du lieu"
-        },
         "ClairMont": {
-            "name": "Clair-Mont Motel",
+            "name": "Clair-Mont Motel ($)",
             "description": "Hébergement confortable et abordable avec toutes les commodités essentielles.",
             "distance": "10 minutes du lieu"
         },
         "Super8": {
-            "name": "Super 8",
+            "name": "Super 8 ($)",
             "description": "Hébergement confortable et abordable avec toutes les commodités essentielles.",
             "distance": "10 minutes du lieu"
         },
         "Watel": {
-            "name": "Hôtel Spa Watel",
+            "name": "Hôtel Spa Watel ($$)",
             "description": "Magnifique hôtel spa avec des installations de bien-être et un environnement paisible.",
             "distance": "5 minutes du lieu"
+        },
+        "StoneHaven": {
+            "name": "StoneHaven ($$$)",
+            "description": "Un refuge luxueux offrant des chambres élégantes avec des vues magnifiques et un service exceptionnel.",
+            "distance": "3 minutes du lieu"
         }
     }
 }

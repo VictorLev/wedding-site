@@ -176,7 +176,7 @@ export default function Navbar() {
         className={`md:hidden fixed inset-0 z-50 transition-transform duration-300 ease-in-out ${
           isMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
-        style={{ backgroundColor: '#CEE0F1', minHeight: '100vh', width: '100vw' }}
+        style={{ backgroundColor: '#e4edff', minHeight: '100vh', width: '100vw' }}
       >
         <Container>
           <div className="flex flex-row justify-between items-center w-full py-6 px-4">

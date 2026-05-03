@@ -187,7 +187,7 @@ export default function Rsvp() {
                   <input
                     type="text"
                     name="accommodations"
-                    placeholder="Which accommodation?"
+                    placeholder="Hébergement"
                     className="w-full p-3 border border-mediumBlue rounded-lg focus:outline-none focus:ring-2 focus:ring-blue transition-all"
                     onChange={handleChange}
                   />

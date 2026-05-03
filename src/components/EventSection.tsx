@@ -27,7 +27,7 @@ const EventSection: React.FC<EventSectionProps> = ({ section, reverse = false })
         </div>
         {/* Text - Second on mobile */}
         <div className="flex flex-col justify-center p-6 text-center flex-1 order-2 sm:order-none">
-          <h2 className="text-xl font-semibold">{t(section.descriptionKey)}</h2>
+          <h2 className="text-xl">{t(section.descriptionKey)}</h2>
         </div>
       </div>
   );
