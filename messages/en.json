@@ -22,7 +22,7 @@
         "RSVP": "Confirm your attendance",
         "Countdown": "days until the big day",
         "SweetMessage": "Thank you for being with us for this beautiful event. Your love and support mean a lot to us, and we look forward to celebrating this moment with you.",
-        "Names": "Maire-Lie & Victor",
+        "Names": "Marie-Lie & Victor",
         "Lorem Ipsum": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in sapien eget nisl euismod accumsan. Maecenas accumsan pulvinar arcu, eu aliquet urna congue et. Curabitur vulputate neque in arcu eleifend, quis eleifend mauris consectetur. Sed at dolor augue. Aliquam vestibulum et enim sit amet volutpat. Duis dignissim ex ipsum, a tincidunt tellus porta vel. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed quam pulvinar, mollis tortor quis, placerat tortor. Suspendisse commodo, nisi at gravida aliquet, ligula risus pellentesque nulla, sed cursus sapien nisi sit amet quam. Pellentesque eget nisi id tortor luctus aliquet eu ac libero."
     },
     "Rsvp": {
@@ -34,7 +34,7 @@
         "Accommodations": "Accommodations",
         "Faq": "FAQ",
         "Rsvp": "RSVP",
-        "Names": "Maire-Lie & Victor"
+        "Names": "Marie-Lie & Victor"
     },
     "Footer": {
         "title": "Language",
@@ -54,7 +54,7 @@
     "FaqQuestions": {
         "Q1": {
             "question": "What is the dress code?",
-            "answer": "The dress code is semi-formal. We want you to feel comfortable and enjoy the day with us. Please wear something that makes you feel good."
+            "answer": "The dress code is semi-formal. We want you to feel comfortable and enjoy the day with us."
         },
         "Q2": {
             "question": "Can I bring a guest?",
@@ -62,19 +62,31 @@
         },
         "Q3": {
             "question": "Can I bring my children?",
-            "answer": "We love children! Please let us know if you are bringing your children by filling out the RSVP form."
+            "answer": "We love children, however this special occasion is child-free. Thank you for your understanding."
         },
         "Q4": {
             "question": "What is the parking situation?",
-            "answer": "There are plenty of parking spaces available on site. Please let us know if you need special accommodations."
+            "answer": "Parking is available on site. A shuttle will also be available to transport guests from hotels to the wedding and back at the end of the evening."
         },
         "Q5": {
             "question": "What is the gift policy?",
-            "answer": "Your presence is the best gift we could ask for. If you wish to give us something, we have a wedding registry at Amazon and Bed Bath & Beyond."
+            "answer": "Your presence is the best gift we could ask for. However, if you wish to give us something, a monetary contribution would be appreciated."
         },
         "Q6": {
             "question": "Can I take photos?",
-            "answer": "We would love for you to take photos and share them with us. Please use the hashtag #MaireLieAndVictorWedding to share your memories with us."
+            "answer": "A professional photographer will be on site to capture the ceremony. We ask that you refrain from taking pictures or videos during this time. After the ceremony, pictures and videos are permitted and welcomed. We look forward to seeing them!"
+        },
+        "Q7": {
+            "question": "What if I have dietary restrictions?",
+            "answer": "Please let us know of any dietary restrictions by filling out the RSVP form."
+        },
+        "Q8": {
+            "question": "Is there accommodation nearby?",
+            "answer": "Yes, there are several accommodation options near the ceremony venue. Please check our accommodations page for more details and recommendations."
+        },
+        "Q9": {
+            "question": "Will there be a shuttle service?",
+            "answer": "Yes, a shuttle service will be offered to guests staying overnight at hotels nearby before and after the event. The shuttle is free, but please let us know in advance via your RSVP if you will be requiring the service so we can plan ahead."
         }
     },
     "RsvpPage": {
@@ -97,6 +109,11 @@
         "accommodations": "Accommodations",
         "arrivalDate": "Arrival Date",
         "departureDate": "Departure Date",
+        "mainCourse": "Main Course Choice",
+        "mainCoursePlusOne": "Main Course Choice for your Guest",
+        "contreFiletBoeuf": "Beef Striploin",
+        "cavatelliRicotta": "Ricotta Cavatelli Vegetarian",
+        "morueIslande": "Icelandic Cod",
         "dietaryRestrictions": "Dietary Restrictions",
         "favoriteSong": "What is your favorite song?",
         "comments": "Comments",

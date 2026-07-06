@@ -26,6 +26,8 @@ export default function Rsvp() {
     accommodations: '',
     plusOneFirstName: '',
     plusOneLastName: '',
+    mainCourse: '',
+    plusOneMainCourse: '',
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -106,7 +108,7 @@ export default function Rsvp() {
                 </svg>
               </div>
               <h2 className="text-3xl text-darkerBlue font-light mb-4">{t('formReceived')}</h2>
-              <p className="text-darkerBlue">We look forward to celebrating with you!</p>
+              <p className="text-darkerBlue">{t('subtitle')}</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="max-w-5xl w-full mx-auto bg-white rounded-lg shadow-lg p-8 space-y-6 mb-20">
@@ -193,6 +195,45 @@ export default function Rsvp() {
                   />
                 </div>
               )}
+
+              <div>
+                <label className="block text-darkerBlue font-semibold mb-2">{t('mainCourse')}</label>
+                <div className="space-y-2">
+                  {['contreFiletBoeuf', 'cavatelliRicotta', 'morueIslande'].map((option) => (
+                    <label key={option} className="flex items-center gap-2 text-darkerBlue">
+                      <input
+                        type="radio"
+                        name="mainCourse"
+                        value={option}
+                        checked={formData.mainCourse === option}
+                        onChange={handleChange}
+                        className="accent-darkerBlue w-4 h-4"
+                        required
+                      />
+                      {t(option)}
+                    </label>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-darkerBlue font-semibold mb-2">{t('mainCoursePlusOne')}</label>
+                <div className="space-y-2">
+                  {['contreFiletBoeuf', 'cavatelliRicotta', 'morueIslande'].map((option) => (
+                    <label key={option} className="flex items-center gap-2 text-darkerBlue">
+                      <input
+                        type="radio"
+                        name="plusOneMainCourse"
+                        value={option}
+                        checked={formData.plusOneMainCourse === option}
+                        onChange={handleChange}
+                        className="accent-darkerBlue w-4 h-4"
+                      />
+                      {t(option)}
+                    </label>
+                  ))}
+                </div>
+              </div>
 
               <div>
                 <label className="block text-darkerBlue font-semibold mb-2">{t('dietaryRestrictions')}</label>

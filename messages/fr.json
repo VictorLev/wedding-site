@@ -63,19 +63,19 @@
         },
         "Q3": {
             "question": "Puis-je amener mes enfants?",
-            "answer": "Nous aimons les enfants, mais pour cette occasion spéciale, nous demandons que seuls les adultes assistent à la cérémonie et à la réception. Nous espérons que vous comprenez."
+            "answer": "Nous aimons les enfants, mais pour cette occasion spéciale, nous demandons que seuls les adultes assistent à la cérémonie et à la réception. Nous vous remercions de votre compréhension."
         },
         "Q4": {
             "question": "Quelle est la situation du stationnement?",
-            "answer": "Il y a du stationnement de disponibles sur le site. Par contre, un navette sera disponible pour transporter les invités depuis les hôtels jusqu'au mariage et pour les reconduire en fin de soirée."
+            "answer": "Le stationnement est disponible sur le site. Une navette sera aussi disponible pour transporter les invités depuis les hôtels jusqu'au mariage et pour les reconduire en fin de soirée."
         },
         "Q5": {
             "question": "Quelle est la politique de cadeaux?",
-            "answer": "Votre présence est le meilleur cadeau que nous pourrions demander. Cependant, si vous souhaitez nous offrir quelque chose, une contribution monétaire sera grandement appréciée."
+            "answer": "Votre présence est le meilleur cadeau que nous pourrions demander. Cependant, si vous souhaitez nous offrir quelque chose, une contribution monétaire sera appréciée."
         },
         "Q6": {
             "question": "Puis-je prendre des photos?",
-            "answer": "Une photographe professionnelle sera présente pour capturer chaque moment spécial. Nous vous demandons de profiter de la cérémonie sans vous soucier de prendre des photos. Après la cérémonie, nous serons ravis de voir vos photos et vidéos!"
+            "answer": "Une photographe professionnelle sera présente pour capturer chaque moment spécial. Nous vous demandons de profiter de la cérémonie sans vous soucier de prendre des photos. Après celle-ci, les photos seront permises, et nous serons ravis de les voir!"
         },
         "Q7": {
             "question": "Que faire si j'ai des restrictions alimentaires?",
@@ -86,7 +86,7 @@
             "answer": "Oui, il y a plusieurs options d'hébergement à proximité du lieu de la cérémonie. Veuillez consulter notre page d'hébergement pour plus de détails et des recommandations."
         },
         "Q9": {
-            "question": "Y a-t-il un navette de disponible?",
+            "question": "Y aura-t-il un service de navette?",
             "answer": "Oui, un navette sera disponible pour transporter les invités depuis les hôtels jusqu'au mariage et pour les reconduire en fin de soirée. La navette est gratuite, mais nous vous demandons de nous informer à l'avance si vous prévoyez de l'utiliser en remplissant le formulaire RSVP."
         }
     },
@@ -109,8 +109,13 @@
         "no": "Non",
         "accommodations": "Veuillez préciser le nom ou address de votre hébergement",
         "departureDate": "Date de départ",
+        "mainCourse": "Choix du plat principal",
+        "mainCoursePlusOne": "Choix du plat principal pour votre invité.e",
+        "contreFiletBoeuf": "Contre-filet de bœuf",
+        "cavatelliRicotta": "Cavatelli ricotta végétarien",
+        "morueIslande": "Morue d'Islande",
         "dietaryRestrictions": "Avez-vous des restrictions alimentaires?",
-        "favoriteSong": "Quelle est votre chason préférée pour vous déhancher?",
+        "favoriteSong": "Quelle est votre chanson préférée pour vous déhancher?",
         "comments": "Commentaires",
         "leaveComment": "Laissez nous un commentaire...",
         "submit": "Soumettre",
