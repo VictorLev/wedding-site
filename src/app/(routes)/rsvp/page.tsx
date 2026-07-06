@@ -172,6 +172,7 @@ export default function Rsvp() {
 
               <div>
                 <label className="block text-darkerBlue font-semibold mb-2">{t('stayingOnsite')}</label>
+                <p className="text-sm text-darkerBlue mb-2">{t('shuttleInfo')}</p>
                 <select
                   name="stayingOnsite"
                   className="w-full p-3 border border-mediumBlue rounded-lg focus:outline-none focus:ring-2 focus:ring-blue transition-all bg-white"
