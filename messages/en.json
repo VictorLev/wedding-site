@@ -86,7 +86,7 @@
         },
         "Q9": {
             "question": "Will there be a shuttle service?",
-            "answer": "Yes, a shuttle service will be offered to guests staying overnight at hotels nearby before and after the event. The shuttle is free, but please let us know in advance via your RSVP if you will be requiring the service so we can plan ahead."
+            "answer": "Yes! The shuttle will pick up guests at their hotel between 2:00 PM and 3:00 PM to bring them to Manoir Davis. For the return trip, it will make three round trips during the evening (9:00 PM, 10:30 PM, and midnight), so there's no need to plan ahead — just hop on whenever it's convenient for you. The shuttle is free, but please let us know in advance if you plan on using it by filling out the RSVP form."
         }
     },
     "RsvpPage": {
@@ -103,7 +103,7 @@
         "namePlusOne": "Name of your guest",
         "numberOfChildren": "Number of children",
         "stayingOnsite": "Are you staying on site? If so, at which accommodation",
-        "shuttleInfo": "The shuttle will pick up guests staying nearby (15 to 20 minutes by car) from Manoir Davis between 2:30 PM and 3:00 PM, and will bring you back once the evening concludes. The exact schedule will be communicated the week prior to the wedding.",
+        "shuttleInfo": "The shuttle will pick up guests staying nearby (15 to 20 minutes by car) from Manoir Davis between 2:00 PM and 3:00 PM. For the return trip, the shuttle will make three departures during the evening (9:00 PM, 10:30 PM, and midnight), so you won't have to worry about timing — just enjoy the party and hop on whenever you're ready to head out! The exact schedule will be communicated the week prior to the wedding.",
         "select": "Select",
         "yes": "Yes",
         "no": "No",
@@ -170,6 +170,11 @@
             "date": "Spring 2025",
             "title": "Return to Quebec",
             "description": "After our adventure in Australia and Asia, we are excited to return to Quebec to be close to you and prepare for our wedding."
+        },
+        "Event9": {
+            "date": "July 2026",
+            "title": "Buying Our Condo",
+            "description": "We bought our first condo together, an exciting new chapter beginning just before our wedding."
         }
     },
     "AccommodationsPage": {

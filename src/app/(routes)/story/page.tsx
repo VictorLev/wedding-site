@@ -12,6 +12,7 @@ import Story5 from '@/public/images/story-5.jpg';
 import Story6 from '@/public/images/story-6.jpg';
 import Story7 from '@/public/images/story-7.jpg';
 import Story8 from '@/public/images/story-8.jpg';
+import Story9 from '@/public/images/story-9.jpg';
 import Container from '@/components/ui/Container';
 import Loading from '@/components/ui/Loading';
 import { Heart } from 'lucide-react';
@@ -38,7 +39,7 @@ export default function Story() {
     return <Loading />;
   }
 
-  const timelineImages = [Story1, Story2, Story3, Story4, Story5, Story6, Story7, Story8];
+  const timelineImages = [Story1, Story2, Story3, Story4, Story5, Story6, Story7, Story8, Story9];
 
   const timelineKeys = Object.keys(messages.StoryTimeline || {});
   const timelineEvents: TimelineEvent[] = timelineKeys.map((key) => ({

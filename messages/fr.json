@@ -87,7 +87,7 @@
         },
         "Q9": {
             "question": "Y aura-t-il un service de navette?",
-            "answer": "Oui, un navette sera disponible pour transporter les invités depuis les hôtels jusqu'au mariage et pour les reconduire en fin de soirée. La navette est gratuite, mais nous vous demandons de nous informer à l'avance si vous prévoyez de l'utiliser en remplissant le formulaire RSVP."
+            "answer": "Oui! La navette viendra chercher les invités à leur hôtel entre 14h et 15h pour les amener au Manoir Davis. Pour le retour, elle fera trois allers-retours durant la soirée (21h, 22h30 et minuit), donc pas besoin de planifier — vous n'aurez qu'à embarquer au moment qui vous convient. La navette est gratuite, mais nous vous demandons de nous informer à l'avance si vous prévoyez de l'utiliser en remplissant le formulaire RSVP."
         }
     },
     "RsvpPage": {
@@ -104,7 +104,7 @@
         "namePlusOne": "Nom de votre invité.e (si applicable)",
         "numberOfChildren": "Nombre d'enfants",
         "stayingOnsite": "Prévoyez-vous utiliser le service de navette pour aller et revenir à votre hébergement?",
-        "shuttleInfo": "La navette prendra en charge les invités logeant à proximité (15 à 20 minutes en voiture) du Manoir Davis entre 14h30 et 15h, et les ramènera une fois la soirée terminée. L'horaire précis sera communiqué la semaine précédant le mariage.",
+        "shuttleInfo": "La navette prendra en charge les invités logeant à proximité (15 à 20 minutes en voiture) du Manoir Davis entre 14h et 15h. Pour le retour, la navette effectuera trois départs durant la soirée (21h, 22h30 et minuit), afin que vous n'ayez pas à vous soucier de l'horaire — profitez simplement de la fête et montez à bord quand vous serez prêts à partir! L'horaire précis sera communiqué la semaine précédant le mariage.",
         "select": "Sélectionner",
         "yes": "Oui",
         "no": "Non",
@@ -170,6 +170,11 @@
             "date": "Juillet 2025",
             "title": "Retour au Québec",
             "description": "Après notre aventure en Australie et en Asie, nous sommes ravis de revenir au Québec parmis nos proches et entamer les préparatifs de notre mariage."
+        },
+        "Event9": {
+            "date": "Juillet 2026",
+            "title": "Achat de notre condo",
+            "description": "Nous avons acheté notre premier condo ensemble, un nouveau chapitre excitant qui débute juste avant notre mariage."
         }
     },
     "AccommodationsPage": {
