@@ -175,9 +175,10 @@ export default function Home() {
       {/* Ceremony */}
       <Section>
         <GoldenBorder title={t('Ceremony')} bg_color="bg-lightBlue">
-          <EventSection section={eventSections[0]} reverse={true} />
-          <EventSection section={eventSections[1]} />
-          <EventSection section={eventSections[2]} reverse={true} />
+          <EventSection section={eventSections[0]} />
+          <EventSection section={eventSections[1]} reverse={true} />
+          <EventSection section={eventSections[2]} />
+          <EventSection section={eventSections[3]} reverse={true} />
         </GoldenBorder>
       </Section>
 

@@ -8,8 +8,11 @@
         "date": "Le 26 septembre 2026",
         "InvitationText": "Veuillez nous rejoindre le 26 septembre 2026 pour célébrer notre mariage",
         "Place": "Lieu",
+        "Arrival": "Arrivée",
+        "Arrival-time": "3:30 à 4:00 PM",
+        "Arrival-description": "Arrivez au Manoir Davis pour vous installer et profiter de la vue sur le lac avant la cérémonie.",
         "Ceremony": "Cérémonie",
-        "Ceremony-time": "3:30 à 4:30 PM",
+        "Ceremony-time": "4:00 à 4:30 PM",
         "Ceremony-description": "La cérémonie aura lieu dans le magnifique Manoir Davis. Rejoignez-nous pour célébrer ce moment spécial.",
         "Cocktail": "Cocktail",
         "Cocktail-time": "4:30 à 6:00 PM",
@@ -50,8 +53,7 @@
     },
     "FaqPage": {
         "title": "Foire aux questions"
-    }
-    ,
+    },
     "FaqQuestions": {
         "Q1": {
             "question": "Quel est le code vestimentaire?",
@@ -97,9 +99,9 @@
         "firstName": "Prénom",
         "lastName": "Nom de famille",
         "activity": "Activité",
-        "fridayBBQ" : "BBQ du vendredi - 6PM",
-        "saturdayCocktail" : "Cocktail du samedi - 1PM",
-        "sundayBrunch" : "Brunch du dimanche - 10AM",
+        "fridayBBQ": "BBQ du vendredi - 6PM",
+        "saturdayCocktail": "Cocktail du samedi - 1PM",
+        "sundayBrunch": "Brunch du dimanche - 10AM",
         "numberOfAdults": "Nombre d'adultes",
         "namePlusOne": "Nom de votre invité.e (si applicable)",
         "numberOfChildren": "Nombre d'enfants",

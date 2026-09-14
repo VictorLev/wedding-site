@@ -3,6 +3,7 @@ import Manoir from "@/public/images/manoir.png";
 import Ring from "@/public/images/ring.png";
 import Cake from "@/public/images/wedding-cake-svgrepo-com.svg";
 import Cocktail from "@/public/images/stemware-svgrepo-com.svg";
+import Bus from "@/public/images/bus.svg";
 import bgHome from "@/public/images/home.jpg";
 import bgHome1 from "@/public/images/home-1.jpg";
 import bgHome2 from "@/public/images/home-2.jpg";
@@ -60,6 +61,15 @@ export const homeSection = {
 };
 
 export const eventSections: EventSection[] = [
+  {
+    id: "arrival",
+    titleKey: "Arrival",
+    timeKey: "Arrival-time",
+    descriptionKey: "Arrival-description",
+    icon: Bus,
+    iconAlt: "Bus",
+    bgColor: "bg-lightBlue"
+  },
   {
     id: "ceremony",
     titleKey: "Ceremony",
