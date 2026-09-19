@@ -20,6 +20,9 @@
         "Reception": "Reception",
         "Reception-time": "6:00 to 11:00 PM",
         "Reception-description": "Join us for an evening of dancing, dining, and celebration.",
+        "Parking": "Parking",
+        "Parking-description": "Free parking is available on site. Follow Chemin Sir-Mortimer-B.-Davis all the way to Manoir Davis, then continue past the manor to the parking area circled on the map below.",
+        "Parking-map-alt": "Satellite map showing the route to Manoir Davis and the guest parking area",
         "Accommodations": "Accommodations",
         "Gifts": "Gifts",
         "RSVP": "Confirm your attendance",
@@ -52,7 +55,8 @@
         "phoneM": "514-449-4799"
     },
     "FaqPage": {
-        "title": "Frequently Asked Questions"
+        "title": "Frequently Asked Questions",
+        "parkingMapAlt": "Satellite map showing the route to Manoir Davis and the guest parking area"
     },
     "FaqQuestions": {
         "Q1": {

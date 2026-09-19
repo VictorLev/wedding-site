@@ -4,6 +4,7 @@ import { useState , useEffect } from 'react';
 import Image from 'next/image';
 import { useTranslations, useMessages } from 'next-intl';
 import Faqbg from '@/public/images/faqbg.jpg';
+import Parking from '@/public/images/stationnement.png';
 import Container from '@/components/ui/Container';
 import Loading from '@/components/ui/Loading';
 import { Plus } from 'lucide-react';
@@ -80,10 +81,21 @@ export default function Faq() {
               </button>
               <div
                 className={`overflow-hidden transition-all duration-500 ${
-                  openIndexes.includes(index) ? 'max-h-screen' : 'max-h-0'
+                  openIndexes.includes(index) ? 'max-h-[200vh]' : 'max-h-0'
                 }`}
               >
                 <p className="pl-9 mt-3 text-darkerBlue">{t(`${key}.answer`)}</p>
+                {key === 'Q4' && (
+                  <div className="pl-9 mt-4">
+                    <Image
+                      src={Parking}
+                      alt={f('parkingMapAlt')}
+                      sizes="(max-width: 640px) 100vw, 384px"
+                      quality={85}
+                      className="w-full max-w-sm h-auto"
+                    />
+                  </div>
+                )}
               </div>
             </div>
           ))}

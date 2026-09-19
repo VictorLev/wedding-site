@@ -20,6 +20,9 @@
         "Reception": "Réception",
         "Reception-time": "6:00 PM",
         "Reception-description": "Soirée de danse, de dîner et de célébration avec DJ et animation.",
+        "Parking": "Stationnement",
+        "Parking-description": "Le stationnement sur place est gratuit. Suivez le chemin Sir-Mortimer-B.-Davis jusqu'au Manoir Davis, puis continuez au-delà du manoir jusqu'au stationnement encerclé sur la carte ci-dessous.",
+        "Parking-map-alt": "Carte satellite montrant le trajet vers le Manoir Davis et le stationnement des invités",
         "Accommodations": "Hébergement",
         "Gifts": "Cadeaux",
         "RSVP": "Confirmer votre présence",
@@ -52,7 +55,8 @@
         "phoneM": "514-449-4799"
     },
     "FaqPage": {
-        "title": "Foire aux questions"
+        "title": "Foire aux questions",
+        "parkingMapAlt": "Carte satellite montrant le trajet vers le Manoir Davis et le stationnement des invités"
     },
     "FaqQuestions": {
         "Q1": {

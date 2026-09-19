@@ -5,6 +5,8 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Map } from "lucide-react";
 
+import Parking from "@/public/images/stationnement.png";
+
 import GoldenBorder from "@/components/ui/GoldenBorder";
 import Section from "@/components/ui/Section";
 import EventSection from "@/components/EventSection";
@@ -182,6 +184,23 @@ export default function Home() {
         </GoldenBorder>
       </Section>
 
+      {/* Parking */}
+      <Section>
+        <GoldenBorder title={t('Parking')} bg_color="bg-lightBlue">
+          <div className="flex flex-col items-center gap-6 max-w-5xl w-full">
+            <p className="text-xl text-center max-w-5xl w-full">
+              {t('Parking-description')}
+            </p>
+            <Image
+              src={Parking}
+              alt={t('Parking-map-alt')}
+              sizes="(max-width: 640px) 100vw, 500px"
+              quality={85}
+              className="w-full max-w-md h-auto shadow"
+            />
+          </div>
+        </GoldenBorder>
+      </Section>
 
       <div className='relative flex flex-col text-center justify-center items-center w-2/3 py-4 mx-auto mb-12'>
         <p className='text-2xl p-2'>
