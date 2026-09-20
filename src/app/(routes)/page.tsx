@@ -185,7 +185,7 @@ export default function Home() {
       </Section>
 
       {/* Parking */}
-      <Section>
+      <Section id="parking">
         <GoldenBorder title={t('Parking')} bg_color="bg-lightBlue">
           <div className="flex flex-col items-center gap-6 max-w-5xl w-full">
             <p className="text-xl text-center max-w-5xl w-full">

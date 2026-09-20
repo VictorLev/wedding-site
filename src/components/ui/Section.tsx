@@ -3,13 +3,15 @@ import DecorativeBackground from "./DecorativeBackground";
 
 interface SectionProps {
   children: React.ReactNode;
+  id?: string;
 }
 
 const Section: React.FC<SectionProps> = ({
-  children
+  children,
+  id
 }) => {
   return (
-    <Container>
+    <Container id={id} className="scroll-mt-24">
       <div className="relative py-10">
         <DecorativeBackground />
         {children}
